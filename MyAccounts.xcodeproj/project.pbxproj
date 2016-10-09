@@ -10,6 +10,10 @@
 		2829CDE71DA448B3002E6C6D /* MyAccounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2829CDDD1DA448B3002E6C6D /* MyAccounts.framework */; };
 		2829CDEC1DA448B3002E6C6D /* MyAccountsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829CDEB1DA448B3002E6C6D /* MyAccountsTests.swift */; };
 		2829CDEE1DA448B3002E6C6D /* MyAccounts.h in Headers */ = {isa = PBXBuildFile; fileRef = 2829CDE01DA448B3002E6C6D /* MyAccounts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2829CDFA1DA44A92002E6C6D /* Ledger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829CDF91DA44A92002E6C6D /* Ledger.swift */; };
+		2829CDFC1DA44AB4002E6C6D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829CDFB1DA44AB4002E6C6D /* Account.swift */; };
+		2829CDFE1DA44D7F002E6C6D /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829CDFD1DA44D7F002E6C6D /* Transaction.swift */; };
+		288369401DA9D2E80019DE11 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883693F1DA9D2E80019DE11 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		2829CDE61DA448B3002E6C6D /* MyAccountsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAccountsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2829CDEB1DA448B3002E6C6D /* MyAccountsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountsTests.swift; sourceTree = "<group>"; };
 		2829CDED1DA448B3002E6C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2829CDF91DA44A92002E6C6D /* Ledger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ledger.swift; sourceTree = "<group>"; };
+		2829CDFB1DA44AB4002E6C6D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		2829CDFD1DA44D7F002E6C6D /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		2883693F1DA9D2E80019DE11 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				2829CDE01DA448B3002E6C6D /* MyAccounts.h */,
+				2883693F1DA9D2E80019DE11 /* Book.swift */,
+				2829CDF91DA44A92002E6C6D /* Ledger.swift */,
+				2829CDFB1DA44AB4002E6C6D /* Account.swift */,
+				2829CDFD1DA44D7F002E6C6D /* Transaction.swift */,
 				2829CDE11DA448B3002E6C6D /* Info.plist */,
 			);
 			path = MyAccounts;
@@ -148,6 +160,7 @@
 				TargetAttributes = {
 					2829CDDC1DA448B3002E6C6D = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					2829CDE51DA448B3002E6C6D = {
@@ -196,6 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288369401DA9D2E80019DE11 /* Book.swift in Sources */,
+				2829CDFA1DA44A92002E6C6D /* Ledger.swift in Sources */,
+				2829CDFE1DA44D7F002E6C6D /* Transaction.swift in Sources */,
+				2829CDFC1DA44AB4002E6C6D /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +337,7 @@
 		2829CDF21DA448B3002E6C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -331,6 +349,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.IronYard.MyAccounts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -338,6 +357,7 @@
 		2829CDF31DA448B3002E6C6D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -356,6 +376,7 @@
 		2829CDF51DA448B3002E6C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MyAccountsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IronYard.MyAccountsTests;
@@ -367,6 +388,7 @@
 		2829CDF61DA448B3002E6C6D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MyAccountsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IronYard.MyAccountsTests;
@@ -394,6 +416,7 @@
 				2829CDF31DA448B3002E6C6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2829CDF41DA448B3002E6C6D /* Build configuration list for PBXNativeTarget "MyAccountsTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +425,7 @@
 				2829CDF61DA448B3002E6C6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

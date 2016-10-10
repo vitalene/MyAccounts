@@ -17,12 +17,12 @@ class Transaction {
     
 
     
-    init(on date: Date, description: String, for amount: [String:NSDecimalNumber], lastAccountTotal: NSDecimalNumber) {
+    init(on date: Date, description: String, for amount: [String:NSDecimalNumber], lastAccountTotal: NSDecimalNumber, type: TransactionType) {
         self.date = date
         self.userProvidedDescription = description
         self.amount = amount
         self.runningTotal = lastAccountTotal
-        self.transactionType = .debit
+        self.transactionType = type
         
     }
     

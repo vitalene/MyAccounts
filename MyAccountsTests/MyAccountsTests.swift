@@ -4,7 +4,7 @@ import XCTest
 @testable import MyAccounts
 
 class MyAccountsTests: XCTestCase {
-    let myTransaction = Transaction(on: Date(), description: "hello world", for: ["hello": 8])
+    let myTransaction = Transaction(on: Date(), description: "hello world", for: ["hi":9.0], lastAccountTotal: 10.0)
     let myAccount = Account(entries: [], titles: ["hi", "hello"], balance: 9.0, category: .asset(isEquity: true))
     let myLedger = Ledger(with: [])
     
@@ -12,7 +12,6 @@ class MyAccountsTests: XCTestCase {
     
     
     func testNotNil() {
-       XCTAssertNil(<#T##expression: Any?##Any?#>)
         
     }
     

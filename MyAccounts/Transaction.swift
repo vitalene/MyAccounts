@@ -2,18 +2,32 @@
 
 import Foundation
 
+
+enum TransactionType {
+    case debit
+    case credit
+}
 class Transaction {
     
     var date: Date
     var userProvidedDescription: String
     var amount: [String:NSDecimalNumber]
+    var transactionType: TransactionType
+    var runningTotal: NSDecimalNumber
     
-    init(on date: Date, description: String, for amount: [String:NSDecimalNumber]) {
+
+    
+    init(on date: Date, description: String, for amount: [String:NSDecimalNumber], lastAccountTotal: NSDecimalNumber) {
         self.date = date
         self.userProvidedDescription = description
         self.amount = amount
+        self.runningTotal = lastAccountTotal
+        self.transactionType = .debit
         
     }
+    
+    
+
     
     // figure out how to do a fraction -- rename to a different name than "amount"  <NSDecimalNumber> ~~~
     

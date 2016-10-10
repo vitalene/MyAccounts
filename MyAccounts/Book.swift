@@ -8,6 +8,12 @@ class Book {
   //  let book = [Account]()
     
     //  static func createABook(withAccount: Account) {
+    var aLedger: Ledger
+    
+    init(withLedger: Ledger) {
+        self.aLedger = withLedger
+    }
+    
     
 }
     

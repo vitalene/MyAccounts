@@ -9,36 +9,34 @@ class Account {
     // Assets: Assets = Liabilities + Owners' Equity
     // 
     // consider an enum here...
-    
     enum Category {
     case asset(isEquity: Bool)
     case liability
     case expense
     case revenue
 }
-    
-
   //  let register = Ledger.init(with: [Transaction], with: [String], and: Float)
-    
     var category: Category
-
-    
     var entries = [Transaction]()
-    
     let columnTitles: [String]
-    
     let currentBalance: Float
     
     
-    init(entries: [Transaction], titles: [String], balance: Float) {
+    init(entries: [Transaction], titles: [String], balance: Float, category: Category) {
         self.entries = entries
         self.columnTitles = titles
         self.currentBalance = balance
-        self.category = Category.liability
+        self.category = category
     }
     
-    
-    
+    func getNewTotal(latestTransaction: Transaction, latestTransAmount: NSDecimalNumber, lastTotal: NSDecimalNumber) -> NSDecimalNumber {
+        switch latestTransaction.transactionType {
+        case .debit:
+            return lastTotal.adding(latestTransAmount)
+        case .credit:
+            return lastTotal.subtracting(latestTransAmount)
+        }
+    }
     
     
 }

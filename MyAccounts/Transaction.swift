@@ -13,7 +13,6 @@ class Transaction {
     var userProvidedDescription: String
     var amount: [String:NSDecimalNumber]
     var transactionType: TransactionType
-    var runningTotal: NSDecimalNumber
     
 
     
@@ -21,7 +20,6 @@ class Transaction {
         self.date = date
         self.userProvidedDescription = description
         self.amount = amount
-        self.runningTotal = lastAccountTotal
         self.transactionType = type
         
     }

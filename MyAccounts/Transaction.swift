@@ -18,30 +18,34 @@ class Transaction {
     var amount: [String:NSDecimalNumber]
     var transactionType: TransactionType
     var currencyType: currencyType
-
     
-    init(on date: Date, description: String, for amount: [String:NSDecimalNumber], lastAccountTotal: NSDecimalNumber, type: TransactionType, currencyType: currencyType) {
+    // initialize the transaction
+    init(on date: Date, description: String, amount: [String:NSDecimalNumber], lastAccountTotal: NSDecimalNumber, type: TransactionType, currencyType: currencyType) {
         self.date = date
         self.userProvidedDescription = description
         self.amount = amount
         self.transactionType = type
         self.currencyType = currencyType
-        
+    }
+    // Make a date for the transaction
+    func addADate(with Date: Date) -> Date {
+        return Date
+    }
+    // Describe the transaction
+    func addADescription(with Input: String ) -> String  {
+        return Input
+    }
+    // credit or debit?
+    func chooseATransactionType(isDebit: Bool) -> TransactionType {
+        if isDebit == true {
+            return .debit
+        } else {
+            return .credit
+        }
     }
     
-    
-
-    
-    // figure out how to do a fraction -- rename to a different name than "amount"  <NSDecimalNumber> ~~~
-    
-    
-    //
-    //    init() {
-    //        date = "hi"
-    //        userProvidedDescription = "hello"
-    //        amount = ["this":0.9]
-    //    }
-    
-    
+    func selectACurrency() -> currencyType {
+        return .dollar
+    }
     
 }

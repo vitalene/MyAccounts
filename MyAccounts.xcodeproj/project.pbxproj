@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		280A42361DABF86B00D9057B /* DollarFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A42351DABF86B00D9057B /* DollarFormatter.swift */; };
+		280A423E1DAE72C100D9057B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A423D1DAE72C100D9057B /* AppDelegate.swift */; };
+		280A42401DAE72C100D9057B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A423F1DAE72C100D9057B /* AccountViewController.swift */; };
+		280A42431DAE72C100D9057B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280A42411DAE72C100D9057B /* Main.storyboard */; };
+		280A42451DAE72C100D9057B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280A42441DAE72C100D9057B /* Assets.xcassets */; };
+		280A42481DAE72C100D9057B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280A42461DAE72C100D9057B /* LaunchScreen.storyboard */; };
+		280A424F1DAE72F700D9057B /* MyAccounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2829CDDD1DA448B3002E6C6D /* MyAccounts.framework */; };
+		280A42511DAE7FD300D9057B /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A42501DAE7FD300D9057B /* TransactionCell.swift */; };
 		2829CDE71DA448B3002E6C6D /* MyAccounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2829CDDD1DA448B3002E6C6D /* MyAccounts.framework */; };
 		2829CDEC1DA448B3002E6C6D /* MyAccountsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829CDEB1DA448B3002E6C6D /* MyAccountsTests.swift */; };
 		2829CDEE1DA448B3002E6C6D /* MyAccounts.h in Headers */ = {isa = PBXBuildFile; fileRef = 2829CDE01DA448B3002E6C6D /* MyAccounts.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		280A424D1DAE72EA00D9057B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2829CDD41DA448B3002E6C6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2829CDDC1DA448B3002E6C6D;
+			remoteInfo = MyAccounts;
+		};
 		2829CDE81DA448B3002E6C6D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2829CDD41DA448B3002E6C6D /* Project object */;
@@ -29,6 +43,14 @@
 
 /* Begin PBXFileReference section */
 		280A42351DABF86B00D9057B /* DollarFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DollarFormatter.swift; sourceTree = "<group>"; };
+		280A423B1DAE72C100D9057B /* MyAccountsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAccountsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		280A423D1DAE72C100D9057B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		280A423F1DAE72C100D9057B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		280A42421DAE72C100D9057B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		280A42441DAE72C100D9057B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		280A42471DAE72C100D9057B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		280A42491DAE72C100D9057B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		280A42501DAE7FD300D9057B /* TransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		2829CDDD1DA448B3002E6C6D /* MyAccounts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyAccounts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2829CDE01DA448B3002E6C6D /* MyAccounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAccounts.h; sourceTree = "<group>"; };
 		2829CDE11DA448B3002E6C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +64,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		280A42381DAE72C100D9057B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280A424F1DAE72F700D9057B /* MyAccounts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2829CDD91DA448B3002E6C6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,11 +90,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280A423C1DAE72C100D9057B /* MyAccountsApp */ = {
+			isa = PBXGroup;
+			children = (
+				280A423D1DAE72C100D9057B /* AppDelegate.swift */,
+				280A423F1DAE72C100D9057B /* AccountViewController.swift */,
+				280A42501DAE7FD300D9057B /* TransactionCell.swift */,
+				280A42411DAE72C100D9057B /* Main.storyboard */,
+				280A42441DAE72C100D9057B /* Assets.xcassets */,
+				280A42461DAE72C100D9057B /* LaunchScreen.storyboard */,
+				280A42491DAE72C100D9057B /* Info.plist */,
+			);
+			path = MyAccountsApp;
+			sourceTree = "<group>";
+		};
 		2829CDD31DA448B3002E6C6D = {
 			isa = PBXGroup;
 			children = (
 				2829CDDF1DA448B3002E6C6D /* MyAccounts */,
 				2829CDEA1DA448B3002E6C6D /* MyAccountsTests */,
+				280A423C1DAE72C100D9057B /* MyAccountsApp */,
 				2829CDDE1DA448B3002E6C6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +119,7 @@
 			children = (
 				2829CDDD1DA448B3002E6C6D /* MyAccounts.framework */,
 				2829CDE61DA448B3002E6C6D /* MyAccountsTests.xctest */,
+				280A423B1DAE72C100D9057B /* MyAccountsApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +161,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		280A423A1DAE72C100D9057B /* MyAccountsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 280A424A1DAE72C100D9057B /* Build configuration list for PBXNativeTarget "MyAccountsApp" */;
+			buildPhases = (
+				280A42371DAE72C100D9057B /* Sources */,
+				280A42381DAE72C100D9057B /* Frameworks */,
+				280A42391DAE72C100D9057B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				280A424E1DAE72EA00D9057B /* PBXTargetDependency */,
+			);
+			name = MyAccountsApp;
+			productName = MyAccountsApp;
+			productReference = 280A423B1DAE72C100D9057B /* MyAccountsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2829CDDC1DA448B3002E6C6D /* MyAccounts */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2829CDF11DA448B3002E6C6D /* Build configuration list for PBXNativeTarget "MyAccounts" */;
@@ -161,6 +225,10 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Neil Vitale";
 				TargetAttributes = {
+					280A423A1DAE72C100D9057B = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
 					2829CDDC1DA448B3002E6C6D = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0800;
@@ -178,6 +246,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2829CDD31DA448B3002E6C6D;
 			productRefGroup = 2829CDDE1DA448B3002E6C6D /* Products */;
@@ -186,11 +255,22 @@
 			targets = (
 				2829CDDC1DA448B3002E6C6D /* MyAccounts */,
 				2829CDE51DA448B3002E6C6D /* MyAccountsTests */,
+				280A423A1DAE72C100D9057B /* MyAccountsApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		280A42391DAE72C100D9057B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280A42481DAE72C100D9057B /* LaunchScreen.storyboard in Resources */,
+				280A42451DAE72C100D9057B /* Assets.xcassets in Resources */,
+				280A42431DAE72C100D9057B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2829CDDB1DA448B3002E6C6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,6 +288,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		280A42371DAE72C100D9057B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280A42401DAE72C100D9057B /* AccountViewController.swift in Sources */,
+				280A423E1DAE72C100D9057B /* AppDelegate.swift in Sources */,
+				280A42511DAE7FD300D9057B /* TransactionCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2829CDD81DA448B3002E6C6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,6 +321,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		280A424E1DAE72EA00D9057B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2829CDDC1DA448B3002E6C6D /* MyAccounts */;
+			targetProxy = 280A424D1DAE72EA00D9057B /* PBXContainerItemProxy */;
+		};
 		2829CDE91DA448B3002E6C6D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2829CDDC1DA448B3002E6C6D /* MyAccounts */;
@@ -238,7 +333,50 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		280A42411DAE72C100D9057B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				280A42421DAE72C100D9057B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		280A42461DAE72C100D9057B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				280A42471DAE72C100D9057B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		280A424B1DAE72C100D9057B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MyAccountsApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.IronYard.MyAccountsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		280A424C1DAE72C100D9057B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MyAccountsApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.IronYard.MyAccountsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		2829CDEF1DA448B3002E6C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -404,6 +542,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		280A424A1DAE72C100D9057B /* Build configuration list for PBXNativeTarget "MyAccountsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				280A424B1DAE72C100D9057B /* Debug */,
+				280A424C1DAE72C100D9057B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2829CDD71DA448B3002E6C6D /* Build configuration list for PBXProject "MyAccounts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

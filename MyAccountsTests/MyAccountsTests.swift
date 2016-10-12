@@ -4,32 +4,64 @@ import XCTest
 @testable import MyAccounts
 
 class MyAccountsTests: XCTestCase {
-    let myTransaction = Transaction(on: Date(), description: "Hello world", amount: ["Total": 9.40], lastAccountTotal: 10.0, type: .debit, currencyType: .dollar)
-    let myAccount = Account(entries: [], title: "hello there", initialBalance: 10.0, category: .asset(isEquity: true))
-    let myLedger = Ledger(with: [])
-    
-    //  let myBook = Book(withLedger: )
-    
-    
+    // Make a computed property called transaction
+    var myTransaction: Transaction {
+        return Transaction(on: Date(), description: "Hello world", amount: 9.40, lastAccountTotal: 10.0, type: .debit, currencyType: .dollar)
+    }
+    // Make a computed property called transaction2
+    var myTransaction2: Transaction {
+        return Transaction(on: Date(), description: "Hello world", amount: 9.40, lastAccountTotal: 11.0, type: .debit, currencyType: .dollar)
+    }
+    // create an account
+    var myAccount: Account {
+        return Account(entries: [myTransaction, myTransaction2], title: "hello there", initialBalance: 10.0, category: .asset(isEquity: true))
+    }
+    // Do any set up before each test runs
+    override func setUp() {
+        super.setUp()
+    }
+    // Are any of these nil?
     func testNotNil() {
+        let myLedger = Ledger(with: [])
         XCTAssertNotNil(myTransaction)
+        XCTAssertNotNil(myTransaction2)
         XCTAssertNotNil(myAccount)
         XCTAssertNotNil(myLedger)
         
     }
-    
+    // do the properties match these values
     func testRightNumber() {
         XCTAssertEqual(myTransaction.transactionType, .debit)
         XCTAssertEqual(myTransaction.currencyType, .dollar)
         XCTAssertEqual(myTransaction.userProvidedDescription, "Hello world")
-        XCTAssertEqual(myTransaction.amount["Total"], 9.40)
+        XCTAssertEqual(myTransaction.amount, 9.40)
+    }
+    // Does adding work
+    func testAdding() {
+        XCTAssertEqual(myTransaction.amount.adding(10.0), 19.40)
+    }
+    // Does subracting work
+    func testSubtracting () {
+        XCTAssertEqual(myTransaction.amount.subtracting(5.0), 4.40)
+    }
+    // Can you sum the values correctly
+    func testAccountTotal () {
+        var myTotal: NSDecimalNumber = 0.00
+        for transaction in myAccount.entries {
+            myTotal = myTotal.adding(transaction.amount)
+        }
+        XCTAssertEqual(myTotal, 18.8)
+        
     }
     
-    func testAdding() {
-        XCTAssertEqual(myTransaction.amount["Total"]?.adding(10.0), 19.40)
+    func testMakingTuple() {
+        let myTuple = myAccount.createEntryTuple(with: myTransaction)
+        let myTuple2 = (myTransaction, NSDecimalNumber())
+       // XCTAssertTrue(myTuple.0 == myTuple2.0)
+        XCTAssertTrue(myTuple.1 == myTuple2.1)
+        
+        
     }
-    func testSubtracting () {
-        XCTAssertEqual(myTransaction.amount["Total"]?.subtracting(5.0), 4.40)
-    }
+    
     
 }

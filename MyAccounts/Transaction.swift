@@ -15,12 +15,12 @@ class Transaction {
     
     var date: Date
     var userProvidedDescription: String
-    var amount: [String:NSDecimalNumber]
+    var amount: NSDecimalNumber
     var transactionType: TransactionType
     var currencyType: currencyType
     
     // initialize the transaction
-    init(on date: Date, description: String, amount: [String:NSDecimalNumber], lastAccountTotal: NSDecimalNumber, type: TransactionType, currencyType: currencyType) {
+    init(on date: Date, description: String, amount: NSDecimalNumber, lastAccountTotal: NSDecimalNumber, type: TransactionType, currencyType: currencyType) {
         self.date = date
         self.userProvidedDescription = description
         self.amount = amount
@@ -48,4 +48,12 @@ class Transaction {
         return .dollar
     }
     
+}
+
+extension Transaction: Equatable {}
+
+func ==(lhs: Transaction, rhs: Transaction) -> Bool {
+    let areEqual = lhs.date == rhs.date && lhs.userProvidedDescription == rhs.userProvidedDescription && lhs.amount == rhs.amount && lhs.currencyType == rhs.currencyType && lhs.transactionType == rhs.transactionType
+    
+    return areEqual
 }

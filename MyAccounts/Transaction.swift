@@ -3,40 +3,40 @@
 import Foundation
 
 
-enum TransactionType {
+public enum TransactionType {
     case debit
     case credit
 }
-enum currencyType {
+public enum currencyType {
     case dollar
 }
 
-class Transaction {
+public class Transaction {
     
-    var date: Date
-    var userProvidedDescription: String
-    var amount: NSDecimalNumber
-    var transactionType: TransactionType
-    var currencyType: currencyType
-    
+   public var date: Date
+    public var userProvidedDescription: String
+    public var amount: NSDecimalNumber
+    public var transactionType: TransactionType
+    public var currencyType: currencyType
     // initialize the transaction
-    init(on date: Date, description: String, amount: NSDecimalNumber, lastAccountTotal: NSDecimalNumber, type: TransactionType, currencyType: currencyType) {
+    public init(on date: Date, description: String, amount: NSDecimalNumber, lastAccountTotal: NSDecimalNumber, type: TransactionType, currencyType: currencyType) {
         self.date = date
         self.userProvidedDescription = description
         self.amount = amount
         self.transactionType = type
         self.currencyType = currencyType
+        
     }
     // Make a date for the transaction
-    func addADate(with Date: Date) -> Date {
+    public func addADate(with Date: Date) -> Date {
         return Date
     }
     // Describe the transaction
-    func addADescription(with Input: String ) -> String  {
+    public func addADescription(with Input: String ) -> String  {
         return Input
     }
     // credit or debit?
-    func chooseATransactionType(isDebit: Bool) -> TransactionType {
+    public func chooseATransactionType(isDebit: Bool) -> TransactionType {
         if isDebit == true {
             return .debit
         } else {
@@ -44,7 +44,7 @@ class Transaction {
         }
     }
     
-    func selectACurrency() -> currencyType {
+    public func selectACurrency() -> currencyType {
         return .dollar
     }
     
@@ -52,7 +52,7 @@ class Transaction {
 
 extension Transaction: Equatable {}
 
-func ==(lhs: Transaction, rhs: Transaction) -> Bool {
+public func ==(lhs: Transaction, rhs: Transaction) -> Bool {
     let areEqual = lhs.date == rhs.date && lhs.userProvidedDescription == rhs.userProvidedDescription && lhs.amount == rhs.amount && lhs.currencyType == rhs.currencyType && lhs.transactionType == rhs.transactionType
     
     return areEqual

@@ -4,7 +4,7 @@
 import Foundation
 
 
-class Ledger {
+public class Ledger {
     
     let accounts: [Account]
     

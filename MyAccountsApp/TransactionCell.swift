@@ -23,12 +23,14 @@ class TransactionCell: UITableViewCell {
         return fmtr
     }()
     
-    
-    
+//    var accountToShow: (transaction: Transaction, runningTotal: NSDecimalNumber) {
+//        let account123 = AccountDataSource.createTransaction(transactionTest)
+//        return account123
+//    }
     
     @IBOutlet var theDate: UILabel! {
         didSet {
-            theDate.text = formatter.string(from: transactionTest.date)
+        //    theDate.text = formatter.string(from: AccountDataSource.createTransaction())
         }
     }
     

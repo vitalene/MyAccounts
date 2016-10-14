@@ -3,13 +3,13 @@
 import Foundation
 
 
-class Account {
+public class Account {
     
     // Equity:  (Owners' Equity) = Assets - Liabilities
     // Assets: Assets = Liabilities + Owners' Equity
     //
     // consider an enum here...
-    enum AccountCategory {
+   public enum AccountCategory {
         case asset(isEquity: Bool)
         case liability
         case expense
@@ -17,16 +17,16 @@ class Account {
     }
     
     //  let register = Ledger.init(with: [Transaction], with: [String], and: Float)
-    var category: AccountCategory
-    var entries = [Transaction]()
-    var title: String
-    let currentBalance: NSDecimalNumber
-    var runningTotal: NSDecimalNumber
-    var initialBalance: NSDecimalNumber
+    public var category: AccountCategory
+    public var entries = [Transaction]()
+    public var title: String
+    public let currentBalance: NSDecimalNumber
+    public var runningTotal: NSDecimalNumber
+    public var initialBalance: NSDecimalNumber
     
     
     // initialize the account
-    init(entries: [Transaction], title: String, initialBalance: NSDecimalNumber, category: AccountCategory) {
+    public init(entries: [Transaction], title: String, initialBalance: NSDecimalNumber, category: AccountCategory) {
         self.entries = entries
         self.title = title
         self.currentBalance = initialBalance
@@ -35,12 +35,12 @@ class Account {
         self.runningTotal = initialBalance
     }
     // get the amount of the last transaction in the array
-    func lastTransactionAmount(transactionArray: [Transaction]) -> NSDecimalNumber {
+    public func lastTransactionAmount(transactionArray: [Transaction]) -> NSDecimalNumber {
         return (transactionArray.last?.amount)!
     }
     
     // return a total given two transaction amounts
-    func getNewTotal(newTransaction: Transaction) -> NSDecimalNumber {
+    public func getNewTotal(newTransaction: Transaction) -> NSDecimalNumber {
         switch newTransaction.transactionType {
         case .debit:
             return self.currentBalance.adding(newTransaction.amount)
@@ -49,7 +49,7 @@ class Account {
         }
     }
     // add all the totals for all the transactions
-    func makeTotalForAccount(with Amounts: [Transaction]) -> NSDecimalNumber {
+    public func makeTotalForAccount(with Amounts: [Transaction]) -> NSDecimalNumber {
         var totalInAccount: NSDecimalNumber = 0.00
         for transaction in Amounts {
             totalInAccount = totalInAccount.adding(transaction.amount)
@@ -58,13 +58,13 @@ class Account {
     }
     
     // Creates a tuple for the view to be populated
-    func createEntryTuple(with Transaction: Transaction) -> (transaction: Transaction, runningTotal: NSDecimalNumber) {
+    public func createEntryTuple(with Transaction: Transaction) -> (transaction: Transaction, runningTotal: NSDecimalNumber) {
         let getTotal: NSDecimalNumber = getNewTotal(newTransaction: Transaction)
         
         return (transaction: Transaction , runningTotal: getTotal)
     }
     
-    func entriesWithRunningTotals() -> [(transaction: Transaction, runningTotal: NSDecimalNumber)] {
+    public func entriesWithRunningTotals() -> [(transaction: Transaction, runningTotal: NSDecimalNumber)] {
         var returnArray: [(transaction: Transaction, runningTotal: NSDecimalNumber)] = []
         var counter = 0
         for entry in entries {
@@ -92,14 +92,13 @@ class Account {
             }
             
             
-            // TJ wrote this. It is a placeholder. It is not correct. At all.
         }
         return returnArray
 
     }
     
     // take the tuple and make it into a dictionary to populate the cells
-    func unpackEntryTuple(theTransaction: Transaction, theTotal: NSDecimalNumber) -> Dictionary<String, Any> {
+    public func unpackEntryTuple(theTransaction: Transaction, theTotal: NSDecimalNumber) -> Dictionary<String, Any> {
         var returnDictionary = Dictionary<String, Any>()
         for parts in 1...4 {
             switch parts {

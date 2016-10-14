@@ -63,23 +63,23 @@ class MyAccountsTests: XCTestCase {
     
     
     func testTransactionAndRunningTotalTuple() {
-        let now = Date()
-        let then1 = now.addingTimeInterval(30342)
-        let then2 = then1.addingTimeInterval(4423432)
-        let before = now.addingTimeInterval(-123122)
+        let date1 = Date()
+        let date2 = date1.addingTimeInterval(30342)
+        let date3 = date2.addingTimeInterval(4423432)
+        let date0 = date1.addingTimeInterval(-123122)
         
-        let transaction1 = Transaction(on: then2, description: "Lemonade money", amount: 10, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar)
-        let transaction2 = Transaction(on: then1, description: "Mittens", amount: 5, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar)
-        let transaction3 = Transaction(on: before, description: "Kittens", amount: 25, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar)
-        let transaction4 = Transaction(on: now, description: "Hello world", amount: 10, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar)
+        let trans3 = Transaction(on: date3, description: "Lemonade money", amount: 10, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar)
+        let trans2 = Transaction(on: date2, description: "Mittens", amount: 5, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar)
+        let trans0 = Transaction(on: date0, description: "Kittens", amount: 25, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar)
+        let trans1 = Transaction(on: date1, description: "Hello world", amount: 10, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar)
         
         // the entries are ordered by date:
         let entries: [Transaction] = [
-            transaction1, transaction2, transaction3, transaction4
+            trans3, trans2, trans0, trans1
         ]
         
         let entries2: [Transaction] = [
-            transaction2, transaction1, transaction3, transaction4
+            trans2, trans3, trans0, trans1
         ]
         
         let account = Account(entries: entries, title: "My Moneys", initialBalance: 50, category: .asset(isEquity: false))
@@ -96,17 +96,17 @@ class MyAccountsTests: XCTestCase {
         
         // Transactions are in order by date:
         let expected: [(transaction: Transaction, runningTotal: NSDecimalNumber)] = [
-            (transaction1, 40),
-            (transaction2, 35),
-            (transaction3, 10),
-            (transaction4, 00)
+            (trans3, 40),
+            (trans2, 35),
+            (trans0, 10),
+            (trans1, 00)
         ]
         // Transactions are out of order by date
         let expectedOutOfOrder: [(transaction: Transaction, runningTotal: NSDecimalNumber)] = [
-            (transaction2, 45),
-            (transaction1, 35),
-            (transaction3, 10),
-            (transaction4, 00)
+            (trans2, 45),
+            (trans3, 35),
+            (trans0, 10),
+            (trans1, 00)
         ]
         
         XCTAssertEqual(result.count, 4)

@@ -16,13 +16,13 @@ class Account {
         case revenue
     }
     
-    
     //  let register = Ledger.init(with: [Transaction], with: [String], and: Float)
     var category: AccountCategory
     var entries = [Transaction]()
     var title: String
     let currentBalance: NSDecimalNumber
     var runningTotal: NSDecimalNumber
+    var initialBalance: NSDecimalNumber
     
     
     // initialize the account
@@ -31,6 +31,7 @@ class Account {
         self.title = title
         self.currentBalance = initialBalance
         self.category = category
+        self.initialBalance = initialBalance
         self.runningTotal = initialBalance
     }
     // get the amount of the last transaction in the array
@@ -57,12 +58,45 @@ class Account {
     }
     
     // Creates a tuple for the view to be populated
-    func createEntryTuple(with Transaction: Transaction) -> (Transaction, NSDecimalNumber) {
+    func createEntryTuple(with Transaction: Transaction) -> (transaction: Transaction, runningTotal: NSDecimalNumber) {
         let getTotal: NSDecimalNumber = getNewTotal(newTransaction: Transaction)
         
-        return (theTransaction: Transaction , theRunningTotal: getTotal)
+        return (transaction: Transaction , runningTotal: getTotal)
     }
     
+    func entriesWithRunningTotals() -> [(transaction: Transaction, runningTotal: NSDecimalNumber)] {
+        var returnArray: [(transaction: Transaction, runningTotal: NSDecimalNumber)] = []
+        var counter = 0
+        for entry in entries {
+            switch entry.transactionType {
+            case .debit:
+                if counter == 0 {
+                    let runningTotalToReturn = self.initialBalance.adding(entry.amount)
+                    returnArray.append((entry, runningTotalToReturn))
+                    counter = counter + 1
+                } else {
+                    let runningTotalToReturn = returnArray[counter - 1].runningTotal.adding(entry.amount)
+                    returnArray.append((entry, runningTotalToReturn))
+                    counter = counter + 1
+                }
+            case .credit:
+                if counter == 0 {
+                    let runningTotalToReturn = self.initialBalance.subtracting(entry.amount)
+                    returnArray.append((entry, runningTotalToReturn))
+                    counter = counter + 1
+                } else {
+                    let runningTotalToReturn = returnArray[counter - 1].runningTotal.subtracting(entry.amount)
+                    returnArray.append((entry, runningTotalToReturn))
+                    counter = counter + 1
+                }
+            }
+            
+            
+            // TJ wrote this. It is a placeholder. It is not correct. At all.
+        }
+        return returnArray
+
+    }
     
     // take the tuple and make it into a dictionary to populate the cells
     func unpackEntryTuple(theTransaction: Transaction, theTotal: NSDecimalNumber) -> Dictionary<String, Any> {
@@ -84,6 +118,6 @@ class Account {
         return returnDictionary
         
     }
-
-    
 }
+
+

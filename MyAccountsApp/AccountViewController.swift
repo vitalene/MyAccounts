@@ -4,26 +4,17 @@ import UIKit
 import MyAccounts
 
 class AccountViewController: UITableViewController {
-    
-//    let section = ["Red", "Yellow", "Green"]
-//    let items = [["🍉", "🍒", "🌶"], ["🍋", "🍌", "🌽"], ["🍏", "🍈", "🍐"]]
-    
-    let accountDataSource: AccountDataSource! = nil
-    
-    
+    var dataSource = AccountDataSource(account: AccountStore().storedAccount)
+
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        tableView.dataSource = accountDataSource
-        //        self.tableView.register(TransactionCell.self, forCellReuseIdentifier: "UITableViewCell")
-        
+        tableView.dataSource = dataSource
     }
     
-    
-    
-
-    
-
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        print(tableView.dataSource)
+        print(tableView.numberOfRows(inSection: 0))
+    }
 }
-

@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCell" id="GXn-1R-HE0" customClass="TransactionCell" customModule="MyAccountsApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCell" id="GXn-1R-HE0" customClass="TransactionCell" customModule="MyAccountsApp">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GXn-1R-HE0" id="V53-SL-VWm">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gtn-Vt-L5K">
@@ -48,6 +48,7 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.51146634749999997" green="0.86062254579999997" blue="0.46109099399999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="gtn-Vt-L5K" secondAttribute="trailing" id="9Wa-gx-haj"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="gtn-Vt-L5K" secondAttribute="bottom" id="DZD-EI-8Mf"/>
@@ -56,10 +57,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="theAmount" destination="H9l-ee-rcw" id="oXB-b7-SWf"/>
-                                    <outlet property="theDate" destination="GyS-wV-jSX" id="gB5-Ng-O59"/>
-                                    <outlet property="theDescription" destination="uGs-bU-C5x" id="KTJ-Dt-c14"/>
-                                    <outlet property="theRunningTotal" destination="nBz-ve-ugQ" id="lit-fa-gJ2"/>
+                                    <outlet property="amountLabel" destination="H9l-ee-rcw" id="HSA-8r-ngU"/>
+                                    <outlet property="dateLabel" destination="GyS-wV-jSX" id="V8N-hD-BKv"/>
+                                    <outlet property="descriptionLabel" destination="uGs-bU-C5x" id="TRF-JP-low"/>
+                                    <outlet property="runningTotalLabel" destination="nBz-ve-ugQ" id="OiL-zj-vWC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,7 +72,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMq-nA-5B3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="129"/>
+            <point key="canvasLocation" x="281" y="-31"/>
         </scene>
     </scenes>
 </document>

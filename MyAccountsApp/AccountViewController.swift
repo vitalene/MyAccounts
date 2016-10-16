@@ -6,9 +6,11 @@ import MyAccounts
 class AccountViewController: UITableViewController {
     var dataSource = AccountDataSource(account: AccountStore().storedAccount)
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = dataSource
+        accountTotalLabel.title = AccountStore().storedAccount.currentBalance.description
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -17,4 +19,10 @@ class AccountViewController: UITableViewController {
         print(tableView.dataSource)
         print(tableView.numberOfRows(inSection: 0))
     }
+    
+    @IBOutlet var accountTotalLabel: UIBarButtonItem!
+    
+    
+    
+    
 }

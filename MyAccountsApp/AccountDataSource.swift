@@ -25,11 +25,11 @@ internal class AccountDataSource: NSObject, UITableViewDataSource {
     
     // Sets the tableView to have a data type of "TransactionCell"
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath)
+        // gets a reusable transaction cell from the tableview
         let cell: TransactionCell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell") as! TransactionCell
         // create the transaction for the row in the index path
         let transaction = account.entries[indexPath.row]
-        
+        // Creates a tuple for the transaction and the running total
         let cellRunningTotal = account.createEntryTuple(with: transaction).runningTotal
         
         // update the text labels in the table view's row
@@ -40,41 +40,11 @@ internal class AccountDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
-    //    // Sets up the table view's TITLE!
-    //     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        return "howdy" //self.section[section]
-    //    }
-    //    // sets up the view for the header
-    //     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        let vw = UIView()
-    //        vw.backgroundColor = UIColor.magenta
-    //        return vw
-    //    }
-    
-    //    func tableView(tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //
-    //    }
     
     
     
     
 }
 
-
-//    var allTransactions: [(transaction: Transaction, runningTotal: NSDecimalNumber)] = []
-
-
-//    func createTransaction() -> Transaction {
-//
-//        let now = Date()
-//
-//        let transaction1 = Transaction(on: now, description: "Example Description", amount: 10, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar)
-//
-//        let thisAccount = Account(entries: [transaction1], title: "Example", initialBalance: 50.0, category: .asset(isEquity: true))
-//        let transactionTuple = thisAccount.createEntryTuple(with: transaction1)
-//
-//        allTransactions.append(transactionTuple)
-//
-//        return transaction1
 
 

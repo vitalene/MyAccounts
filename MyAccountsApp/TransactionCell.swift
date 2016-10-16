@@ -11,7 +11,7 @@ class TransactionCell: UITableViewCell {
     // Format the date string
     static var dateFormatter: DateFormatter = {
         let fmtr = DateFormatter()
-        let myLocale = Locale(identifier: "bg_BG")
+        let myLocale = Locale(identifier: "en_US")
         fmtr.dateStyle = .medium
         fmtr.locale = myLocale
         return fmtr

@@ -8,9 +8,9 @@ class AccountStore {
     
     public init () {
         storedAccount = Account(entries: [
-            Transaction(on: Date(), description: "hello world 1", amount: 10.0, lastAccountTotal: 50.0, type: .credit, currencyType: .dollar),
-            Transaction(on: Date(), description: "hello world 2", amount: 10.0, lastAccountTotal: 50.0, type: .credit, currencyType: .dollar),
-            Transaction(on: Date(), description: "hello world 3", amount: 10.0, lastAccountTotal: 50.0, type: .credit, currencyType: .dollar)
+            Transaction(on: Date(), description: "Burritos", amount: 10.0, lastAccountTotal: 50.0, type: .credit, currencyType: .dollar),
+            Transaction(on: Date(), description: "Apples", amount: 10.0, lastAccountTotal: 50.0, type: .credit, currencyType: .dollar),
+            Transaction(on: Date(), description: "Rent", amount: 10.0, lastAccountTotal: 50.0, type: .credit, currencyType: .dollar)
             ], title: "My Checking Account", initialBalance: 100.0, category: .asset(isEquity: false))
     }
 }

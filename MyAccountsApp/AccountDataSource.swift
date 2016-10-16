@@ -12,11 +12,13 @@ internal class AccountDataSource: NSObject, UITableViewDataSource {
     //MARK: - Account View data source
     
     // changing the number of sections to be the count of the section array
+    // number of sections should be one at this point in features
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    // Sets up the tableview to have as many rows as needed
+    // Sets up the tableview to have as many rows as the account has transactions
+    // ie. "entries"
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return account.entries.count
     }
@@ -25,12 +27,16 @@ internal class AccountDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath)
         let cell: TransactionCell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell") as! TransactionCell
+        // create the transaction for the row in the index path
         let transaction = account.entries[indexPath.row]
         
+        let cellRunningTotal = account.createEntryTuple(with: transaction).runningTotal
+        
+        // update the text labels in the table view's row
         cell.dateLabel.text = TransactionCell.dateFormatter.string(from: transaction.date)
         cell.descriptionLabel.text = transaction.userProvidedDescription
-        cell.amountLabel.text = transaction.amount.rounding(accordingToBehavior: TransactionCell.numberHandler).description
-
+        cell.amountLabel.text = "$\(transaction.amount.rounding(accordingToBehavior: TransactionCell.numberHandler).description)"
+        cell.runningTotalLabel.text = "$\(cellRunningTotal.description)"
         return cell
     }
     

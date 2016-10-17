@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GXn-1R-HE0" id="V53-SL-VWm">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gtn-Vt-L5K">
@@ -76,7 +76,9 @@
                             <outlet property="delegate" destination="o64-7k-dCZ" id="VaP-Dx-grh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Account" id="Xi7-B4-pGU"/>
+                    <navigationItem key="navigationItem" title="Account" id="Xi7-B4-pGU">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="T4G-w8-AG0"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="accountTotalLabel" destination="EPH-Eq-MXx" id="lsU-T8-yU9"/>
                     </connections>

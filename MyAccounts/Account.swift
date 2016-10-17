@@ -42,6 +42,16 @@ public class Account {
         }
         
     }
+    /// Appends a transaction to the transaction array
+    public func addATransaction(withTransaction: Transaction) {
+        self.entries.append(withTransaction)
+        switch withTransaction.transactionType {
+        case .credit:
+            self.currentBalance = self.currentBalance.subtracting(withTransaction.amount)
+        case .debit:
+            self.currentBalance = self.currentBalance.adding(withTransaction.amount)
+        }
+    }
     
     
     /// get the amount of the last transaction in the array
@@ -73,7 +83,6 @@ public class Account {
         return (transaction: Transaction , runningTotal: getTotal)
     }
     
-    
     /// Creates running totals and apppends them to the transaction inside a tuple
     public func entriesWithRunningTotals() -> [(transaction: Transaction, runningTotal: NSDecimalNumber)] {
         var returnArray: [(transaction: Transaction, runningTotal: NSDecimalNumber)] = []
@@ -87,19 +96,16 @@ public class Account {
                     counter = counter + 1
                 } else {
                     let runningTotalToReturn = returnArray[counter - 1].runningTotal.adding(entry.amount)
-                    
                     returnArray.append((entry, runningTotalToReturn))
                     counter = counter + 1
                 }
             case .credit:
                 if counter == 0 {
                     let runningTotalToReturn = self.initialBalance.subtracting(entry.amount)
-                    
                     returnArray.append((entry, runningTotalToReturn))
                     counter = counter + 1
                 } else {
                     let runningTotalToReturn = returnArray[counter - 1].runningTotal.subtracting(entry.amount)
-                    
                     returnArray.append((entry, runningTotalToReturn))
                     counter = counter + 1
                 }

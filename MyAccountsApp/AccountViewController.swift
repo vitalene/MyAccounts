@@ -10,14 +10,16 @@ class AccountViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = dataSource
-        //let numberOfRows = tableView.numberOfRows(inSection: 1)
-        //accountTotalLabel.title = tableView.dequeueReusableCell(withIdentifier: "T
-        accountTotalLabel.title = "$\(AccountStore().storedAccount.currentBalance.description)"
+        accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        dataSource.account.addATransaction(withTransaction: Transaction(on: Date(), description: "Lemonade money", amount: 10, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar))
+        tableView.reloadData()
+        accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
+        }
     
     @IBOutlet var accountTotalLabel: UIBarButtonItem!
     

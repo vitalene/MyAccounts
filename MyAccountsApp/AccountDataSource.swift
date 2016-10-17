@@ -30,16 +30,13 @@ internal class AccountDataSource: NSObject, UITableViewDataSource {
         let cell: TransactionCell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell") as! TransactionCell
         // create the transaction for the row in the index path
         let transaction = account.entriesWithRunningTotals()[indexPath.row]
-        account.currentBalance = transaction.runningTotal
-        // Creates a tuple for the transaction and the running total
-        let cellRunningTotal = transaction.runningTotal.description
-        self.account.currentBalance = transaction.runningTotal
         
         
         // update the text labels in the table view's row
         cell.dateLabel.text = TransactionCell.dateFormatter.string(from: transaction.transaction.date)
         cell.descriptionLabel.text = transaction.transaction.userProvidedDescription
         cell.amountLabel.text = "$\(transaction.transaction.amount.rounding(accordingToBehavior: TransactionCell.numberHandler).description)"
+        let cellRunningTotal = transaction.runningTotal.description
         cell.runningTotalLabel.text = "$\(cellRunningTotal)"
         return cell
     }

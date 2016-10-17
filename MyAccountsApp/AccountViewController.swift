@@ -5,19 +5,18 @@ import MyAccounts
 
 class AccountViewController: UITableViewController {
     var dataSource = AccountDataSource(account: AccountStore().storedAccount)
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = dataSource
-        accountTotalLabel.title = AccountStore().storedAccount.currentBalance.description
+        //let numberOfRows = tableView.numberOfRows(inSection: 1)
+        //accountTotalLabel.title = tableView.dequeueReusableCell(withIdentifier: "T
+        accountTotalLabel.title = "$\(AccountStore().storedAccount.currentBalance.description)"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
-        print(tableView.dataSource)
-        print(tableView.numberOfRows(inSection: 0))
     }
     
     @IBOutlet var accountTotalLabel: UIBarButtonItem!

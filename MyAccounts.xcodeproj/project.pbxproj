@@ -20,6 +20,9 @@
 		2829CDFA1DA44A92002E6C6D /* Ledger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829CDF91DA44A92002E6C6D /* Ledger.swift */; };
 		2829CDFC1DA44AB4002E6C6D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829CDFB1DA44AB4002E6C6D /* Account.swift */; };
 		2829CDFE1DA44D7F002E6C6D /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829CDFD1DA44D7F002E6C6D /* Transaction.swift */; };
+		28450AD61DB53D2B00CD6F9F /* OutOfOrderTuples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28450AD51DB53D2B00CD6F9F /* OutOfOrderTuples.swift */; };
+		28450AD81DB53E8000CD6F9F /* CanMakeTuples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28450AD71DB53E8000CD6F9F /* CanMakeTuples.swift */; };
+		28450ADA1DB53F3400CD6F9F /* TestTheCurrentBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28450AD91DB53F3400CD6F9F /* TestTheCurrentBalance.swift */; };
 		288088C31DB169E50006A8C8 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288088C21DB169E50006A8C8 /* AccountDataSource.swift */; };
 		288369401DA9D2E80019DE11 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883693F1DA9D2E80019DE11 /* Book.swift */; };
 		28B756C01DB29F99002CEAC6 /* AccountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B756BF1DB29F99002CEAC6 /* AccountStore.swift */; };
@@ -62,6 +65,9 @@
 		2829CDF91DA44A92002E6C6D /* Ledger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ledger.swift; sourceTree = "<group>"; };
 		2829CDFB1DA44AB4002E6C6D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2829CDFD1DA44D7F002E6C6D /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		28450AD51DB53D2B00CD6F9F /* OutOfOrderTuples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutOfOrderTuples.swift; sourceTree = "<group>"; };
+		28450AD71DB53E8000CD6F9F /* CanMakeTuples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanMakeTuples.swift; sourceTree = "<group>"; };
+		28450AD91DB53F3400CD6F9F /* TestTheCurrentBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTheCurrentBalance.swift; sourceTree = "<group>"; };
 		288088C21DB169E50006A8C8 /* AccountDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDataSource.swift; sourceTree = "<group>"; };
 		2883693F1DA9D2E80019DE11 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		28B756BF1DB29F99002CEAC6 /* AccountStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountStore.swift; sourceTree = "<group>"; };
@@ -148,6 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				2829CDEB1DA448B3002E6C6D /* MyAccountsTests.swift */,
+				28450AD71DB53E8000CD6F9F /* CanMakeTuples.swift */,
+				28450AD91DB53F3400CD6F9F /* TestTheCurrentBalance.swift */,
+				28450AD51DB53D2B00CD6F9F /* OutOfOrderTuples.swift */,
 				2829CDED1DA448B3002E6C6D /* Info.plist */,
 			);
 			path = MyAccountsTests;
@@ -322,7 +331,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28450ADA1DB53F3400CD6F9F /* TestTheCurrentBalance.swift in Sources */,
 				2829CDEC1DA448B3002E6C6D /* MyAccountsTests.swift in Sources */,
+				28450AD81DB53E8000CD6F9F /* CanMakeTuples.swift in Sources */,
+				28450AD61DB53D2B00CD6F9F /* OutOfOrderTuples.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

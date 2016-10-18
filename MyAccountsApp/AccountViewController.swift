@@ -3,9 +3,13 @@
 import UIKit
 import MyAccounts
 
-class AccountViewController: UITableViewController {
+class AccountViewController: UITableViewController, TransactionCreationViewControllerDelegate  {
     var dataSource = AccountDataSource(account: AccountStore().storedAccount)
-    
+    func returnTheTransaction() {
+    }
+    func transactionCreationViewController(_ vc: TransactionCreationViewController, didCreateTransaction transaction: Transaction) {
+        dataSource.account.addATransaction(withTransaction: transaction)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,13 +20,34 @@ class AccountViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        dataSource.account.addATransaction(withTransaction: Transaction(on: Date(), description: "Lemonade money", amount: 10, lastAccountTotal: 10.0, type: .credit, currencyType: .dollar))
         tableView.reloadData()
         accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
-        }
+    }
     
     @IBOutlet var accountTotalLabel: UIBarButtonItem!
-    
+    @IBAction func makeNewTransaction(_ sender: UIBarButtonItem) {
+        
+        
+        
+    }
+    @IBAction func removeATransaction(_ sender: UIBarButtonItem) {
+        dataSource.account.removeATransaction()
+        tableView.reloadData()
+        
+    }
+    // Does something when the segue is hit
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier! {
+        case "createTransaction":
+            print("howdy there!")
+            let controller = segue.destination as! TransactionCreationViewController
+            controller.delegate = self
+        default:
+            fatalError("This shouldn't happen")
+        }
+        
+    }
     
     
     

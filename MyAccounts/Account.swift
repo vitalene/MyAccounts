@@ -52,6 +52,10 @@ public class Account {
             self.currentBalance = self.currentBalance.adding(withTransaction.amount)
         }
     }
+    /// removes a transaction from the transaction array
+    public func removeATransaction() {
+        self.entries.remove(at: self.entries.count - 1)
+    }
     
     
     /// get the amount of the last transaction in the array

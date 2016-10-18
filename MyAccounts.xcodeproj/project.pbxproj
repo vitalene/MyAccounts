@@ -28,6 +28,7 @@
 		288369401DA9D2E80019DE11 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883693F1DA9D2E80019DE11 /* Book.swift */; };
 		28B756C01DB29F99002CEAC6 /* AccountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B756BF1DB29F99002CEAC6 /* AccountStore.swift */; };
 		28B756C11DB2F309002CEAC6 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A42501DAE7FD300D9057B /* TransactionCell.swift */; };
+		28F20F851DB57F4C00A6FFF5 /* TransactionCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F20F841DB57F4C00A6FFF5 /* TransactionCreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		288088C21DB169E50006A8C8 /* AccountDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDataSource.swift; sourceTree = "<group>"; };
 		2883693F1DA9D2E80019DE11 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		28B756BF1DB29F99002CEAC6 /* AccountStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountStore.swift; sourceTree = "<group>"; };
+		28F20F841DB57F4C00A6FFF5 /* TransactionCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCreationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				280A423D1DAE72C100D9057B /* AppDelegate.swift */,
 				280A423F1DAE72C100D9057B /* AccountViewController.swift */,
+				28F20F841DB57F4C00A6FFF5 /* TransactionCreationViewController.swift */,
 				28B756BF1DB29F99002CEAC6 /* AccountStore.swift */,
 				288088C21DB169E50006A8C8 /* AccountDataSource.swift */,
 				280A42501DAE7FD300D9057B /* TransactionCell.swift */,
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F20F851DB57F4C00A6FFF5 /* TransactionCreationViewController.swift in Sources */,
 				280A42401DAE72C100D9057B /* AccountViewController.swift in Sources */,
 				28B756C01DB29F99002CEAC6 /* AccountStore.swift in Sources */,
 				280A423E1DAE72C100D9057B /* AppDelegate.swift in Sources */,

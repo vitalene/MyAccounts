@@ -7,38 +7,42 @@ protocol TransactionCreationViewControllerDelegate {
     func transactionCreationViewController(_ vc: TransactionCreationViewController, didCreateTransaction transaction: Transaction)
 }
 
+
+
 class TransactionCreationViewController: UIViewController {
+    
+    var transactionToSend = Transaction(on: Date(), description: "", amount: 0.00, lastAccountTotal: 0.00, type: .credit , currencyType: .dollar)
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        var yep = delegate?.transactionCreationViewController(self, didCreateTransaction: transactionToSend)
+
+        
+    }
+    
+    
     @IBOutlet var amountTextBox: UITextField!
+    
     @IBOutlet var descriptionTextBox: UITextField!
     
     @IBOutlet var dateAndTimePicker: UIDatePicker!
     var delegate:TransactionCreationViewControllerDelegate?
     
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    @IBAction func saveButton(_ sender: AnyObject) {
+        self.transactionToSend.amount = NSDecimalNumber(string: amountTextBox.text)
+        self.transactionToSend.addADescription(with: descriptionTextBox.text!)
+        self.transactionToSend.addADate(with: Date())
+        navigationController?.popViewController(animated: true)
         
         
-        delegate?.transactionCreationViewController(self, didCreateTransaction: Transaction(on: Date(), description: "hi", amount: 8.00, lastAccountTotal: 50.00, type: .credit, currencyType: .dollar))
         
-        
-            
-            //self, didCreateTransaction: Transaction(on: Date(), description: "hi", amount: 14.0, lastAccountTotal: 22.0, type: .credit, currencyType: .dollar)
     }
-
-
     
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    
+    
     
 }

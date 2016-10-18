@@ -32,8 +32,8 @@ public class Transaction {
         return Date
     }
     // Describe the transaction
-    public func addADescription(with Input: String ) -> String  {
-        return Input
+    public func addADescription(with Input: String )  {
+        self.userProvidedDescription = Input
     }
     // credit or debit?
     public func chooseATransactionType(isDebit: Bool) -> TransactionType {

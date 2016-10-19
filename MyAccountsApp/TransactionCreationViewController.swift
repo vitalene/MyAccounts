@@ -16,7 +16,7 @@ class TransactionCreationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        var yep = delegate?.transactionCreationViewController(self, didCreateTransaction: transactionToSend)
+        delegate?.transactionCreationViewController(self, didCreateTransaction: transactionToSend)
 
         
     }
@@ -29,18 +29,24 @@ class TransactionCreationViewController: UIViewController {
     @IBOutlet var dateAndTimePicker: UIDatePicker!
     var delegate:TransactionCreationViewControllerDelegate?
     
+    
+    @IBOutlet var transactionTypeSwitch: UISwitch!
+    
+    
     @IBAction func saveButton(_ sender: AnyObject) {
         self.transactionToSend.amount = NSDecimalNumber(string: amountTextBox.text)
         self.transactionToSend.addADescription(with: descriptionTextBox.text!)
-        self.transactionToSend.addADate(with: Date())
+        self.transactionToSend.addADate(with: dateAndTimePicker.date)
+        if transactionTypeSwitch.isOn {
+            self.transactionToSend.transactionType = .debit
+        } else {
+            self.transactionToSend.transactionType = .credit
+        }
+     
+    
         navigationController?.popViewController(animated: true)
         
-        
-        
     }
-    
-    
-    
     
     
     

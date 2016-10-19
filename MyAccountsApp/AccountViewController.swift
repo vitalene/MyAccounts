@@ -31,7 +31,8 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
         
     }
     @IBAction func removeATransaction(_ sender: UIBarButtonItem) {
-        dataSource.account.removeATransaction()
+        // removes the transaction fitting the description withtransaction
+        dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 2])
         tableView.reloadData()
         
     }

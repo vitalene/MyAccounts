@@ -52,9 +52,16 @@ public class Account {
             self.currentBalance = self.currentBalance.adding(withTransaction.amount)
         }
     }
-    /// removes a transaction from the transaction array
-    public func removeATransaction() {
-        self.entries.remove(at: self.entries.count - 1)
+    /// removes a transaction from the transaction array fitting the description
+    public func removeATransaction(withTransaction: Transaction) {
+        self.entries.remove(at: self.entries.index(of: withTransaction)!)
+        switch withTransaction.transactionType {
+        case .credit:
+            self.currentBalance = self.currentBalance.adding(withTransaction.amount)
+        case .debit:
+            self.currentBalance = self.currentBalance.subtracting(withTransaction.amount)
+        }
+        
     }
     
     

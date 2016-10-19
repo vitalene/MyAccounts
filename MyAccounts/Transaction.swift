@@ -28,8 +28,8 @@ public class Transaction {
         
     }
     // Make a date for the transaction
-    public func addADate(with Date: Date) -> Date {
-        return Date
+    public func addADate(with Date: Date) {
+        self.date = Date
     }
     // Describe the transaction
     public func addADescription(with Input: String )  {

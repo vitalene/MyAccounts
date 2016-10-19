@@ -3,6 +3,7 @@
 import Foundation
 
 
+
 public class Account {
     
     // Equity:  (Owners' Equity) = Assets - Liabilities
@@ -42,6 +43,11 @@ public class Account {
         }
         
     }
+    
+    
+    
+    
+    
     /// Appends a transaction to the transaction array
     public func addATransaction(withTransaction: Transaction) {
         self.entries.append(withTransaction)

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Account-->
+        <!--Transactions-->
         <scene sceneID="9b4-VH-cv3">
             <objects>
                 <tableViewController id="o64-7k-dCZ" customClass="AccountViewController" customModule="MyAccountsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GXn-1R-HE0" id="V53-SL-VWm">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gtn-Vt-L5K">
@@ -77,7 +77,7 @@
                             <outlet property="delegate" destination="o64-7k-dCZ" id="VaP-Dx-grh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Account" id="Xi7-B4-pGU">
+                    <navigationItem key="navigationItem" title="Transactions" id="Xi7-B4-pGU">
                         <rightBarButtonItems>
                             <barButtonItem title="+" id="T4G-w8-AG0">
                                 <connections>
@@ -187,6 +187,58 @@
             </objects>
             <point key="canvasLocation" x="2053.5999999999999" y="-31.03448275862069"/>
         </scene>
+        <!--Accounts-->
+        <scene sceneID="Hkm-UC-Fig">
+            <objects>
+                <tableViewController id="7bM-4U-3Fk" customClass="LedgerViewController" customModule="MyAccountsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wh1-no-LOl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountCell" id="dwI-md-rdz" customClass="AccountCell" customModule="MyAccountsApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dwI-md-rdz" id="uVc-tQ-EV2">
+                                    <frame key="frameInset" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGH-oz-CWo">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jZ-zp-ZFh">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BGH-oz-CWo" firstAttribute="centerX" secondItem="uVc-tQ-EV2" secondAttribute="centerX" constant="-6.5" id="944-I3-S5z"/>
+                                        <constraint firstItem="BGH-oz-CWo" firstAttribute="centerY" secondItem="uVc-tQ-EV2" secondAttribute="centerY" id="Ihz-XQ-Xye"/>
+                                        <constraint firstItem="3jZ-zp-ZFh" firstAttribute="centerY" secondItem="uVc-tQ-EV2" secondAttribute="centerY" id="Wuj-NE-cGn"/>
+                                        <constraint firstItem="3jZ-zp-ZFh" firstAttribute="leading" secondItem="BGH-oz-CWo" secondAttribute="trailing" constant="15" id="xZb-54-ihv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="accountTitleLabel" destination="BGH-oz-CWo" id="nCp-OA-LRl"/>
+                                    <outlet property="amountTextLabel" destination="3jZ-zp-ZFh" id="Dwi-7a-wKh"/>
+                                    <segue destination="o64-7k-dCZ" kind="show" id="N2Q-ff-vJW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7bM-4U-3Fk" id="G3d-iy-ziZ"/>
+                            <outlet property="delegate" destination="7bM-4U-3Fk" id="jiS-4l-Zvr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Accounts" id="i2C-yF-WDf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8e-4M-g5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="409" y="-18"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="fCu-jN-xem">
             <objects>
@@ -198,12 +250,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="o64-7k-dCZ" kind="relationship" relationship="rootViewController" id="rRk-kr-4DM"/>
+                        <segue destination="7bM-4U-3Fk" kind="relationship" relationship="rootViewController" id="ZqP-yb-lqv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3BR-aI-hzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280.80000000000001" y="-31.03448275862069"/>
+            <point key="canvasLocation" x="-348" y="-18"/>
         </scene>
     </scenes>
 </document>

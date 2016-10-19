@@ -6,9 +6,9 @@ import Foundation
 
 public class Ledger {
     
-    let accounts: [Account]
+    public let accounts: [Account]
     
-    init(with accounts: [Account]) {
+    public init(with accounts: [Account]) {
         self.accounts = accounts
     }
     

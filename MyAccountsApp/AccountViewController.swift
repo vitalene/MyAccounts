@@ -7,6 +7,7 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
     var dataSource = AccountDataSource(account: AccountStore().storedAccount)
     func returnTheTransaction() {
     }
+    // creates a transaction in the transaction creation view controller, adds it the the datasource and then dismisses it
     func transactionCreationViewController(_ vc: TransactionCreationViewController, didCreateTransaction transaction: Transaction) {
         dataSource.account.addATransaction(withTransaction: transaction)
         _ = navigationController?.popViewController(animated: true)
@@ -15,11 +16,7 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
         
     }
     
-    
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
@@ -36,11 +33,7 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
     }
     
     @IBOutlet var accountTotalLabel: UIBarButtonItem!
-    @IBAction func makeNewTransaction(_ sender: UIBarButtonItem) {
-        
-        
-        
-    }
+    @IBAction func makeNewTransaction(_ sender: UIBarButtonItem) {}
     @IBAction func removeATransaction(_ sender: UIBarButtonItem) {
         // removes the transaction fitting the description withtransaction
         dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 1])
@@ -61,7 +54,6 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
         }
         
     }
-    
-    
+
     
 }

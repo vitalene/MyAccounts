@@ -9,16 +9,27 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
     }
     func transactionCreationViewController(_ vc: TransactionCreationViewController, didCreateTransaction transaction: Transaction) {
         dataSource.account.addATransaction(withTransaction: transaction)
+        _ = navigationController?.popViewController(animated: true)
+        
+        print(dataSource.account.currentBalance.description)
+        
     }
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.reloadData()
         tableView.dataSource = dataSource
         accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        print(dataSource.account.currentBalance.description)
         
         tableView.reloadData()
         accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
@@ -32,7 +43,8 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
     }
     @IBAction func removeATransaction(_ sender: UIBarButtonItem) {
         // removes the transaction fitting the description withtransaction
-        dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 2])
+        dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 1])
+        print(dataSource.account.currentBalance.description)
         tableView.reloadData()
         
     }

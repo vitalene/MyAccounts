@@ -11,13 +11,11 @@ protocol TransactionCreationViewControllerDelegate {
 
 class TransactionCreationViewController: UIViewController {
     
-    var transactionToSend = Transaction(on: Date(), description: "", amount: 0.00, lastAccountTotal: 0.00, type: .credit , currencyType: .dollar)
+    var transactionToSend = Transaction(on: Date(), description: "", amount: 10.00, lastAccountTotal: 0.00, type: .credit , currencyType: .dollar)
     
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        delegate?.transactionCreationViewController(self, didCreateTransaction: transactionToSend)
-
         
     }
     
@@ -42,9 +40,9 @@ class TransactionCreationViewController: UIViewController {
         } else {
             self.transactionToSend.transactionType = .credit
         }
-     
-    
-        navigationController?.popViewController(animated: true)
+        
+        delegate?.transactionCreationViewController(self, didCreateTransaction: transactionToSend)
+
         
     }
     

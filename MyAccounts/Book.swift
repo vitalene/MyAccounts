@@ -3,15 +3,14 @@
 import Foundation
 
 
-class Book {
+public class Book {
     
-  //  let book = [Account]()
+    public var aLedger: Ledger
+    public var bookTitle: String
     
-    //  static func createABook(withAccount: Account) {
-    var aLedger: Ledger
-    
-    init(withLedger: Ledger) {
+    public init(withLedger: Ledger, with title: String) {
         self.aLedger = withLedger
+        self.bookTitle = title
     }
     
     

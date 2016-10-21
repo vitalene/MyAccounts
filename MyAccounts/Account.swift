@@ -4,7 +4,7 @@ import Foundation
 
 
 
-public class Account {
+public class Account: NSObject, NSCoding {
     
     // Equity:  (Owners' Equity) = Assets - Liabilities
     // Assets: Assets = Liabilities + Owners' Equity
@@ -44,7 +44,34 @@ public class Account {
         
     }
     
+    struct AccountKeys {
+        static let categoryKey = "category"
+        static let entriesKey = "entries"
+        static let titleKey = "title"
+        static let runningTotalKey = "runningTotal"
+        static let initialBalanceKey = "initialBalance"
+        static let currentBalanceKey = "currentBalance"
+    }
     
+    required public init?(coder aDecoder: NSCoder) {
+        self.category = aDecoder.decodeObject(forKey: AccountKeys.categoryKey) as! AccountCategory
+        self.entries = aDecoder.decodeObject(forKey: AccountKeys.entriesKey) as! [Transaction]
+        self.title = aDecoder.decodeObject(forKey: AccountKeys.titleKey) as! String
+        self.initialBalance = aDecoder.decodeObject(forKey: AccountKeys.initialBalanceKey) as! NSDecimalNumber
+        self.runningTotal = aDecoder.decodeObject(forKey: AccountKeys.runningTotalKey) as! NSDecimalNumber
+        self.currentBalance = aDecoder.decodeObject(forKey: AccountKeys.currentBalanceKey) as! NSDecimalNumber
+        
+    }
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.category, forKey: AccountKeys.categoryKey)
+        aCoder.encode(self.entries, forKey: AccountKeys.entriesKey)
+        aCoder.encode(self.title, forKey: AccountKeys.titleKey)
+        aCoder.encode(self.initialBalance, forKey: AccountKeys.initialBalanceKey)
+        aCoder.encode(self.runningTotal, forKey: AccountKeys.runningTotalKey)
+        aCoder.encode(self.currentBalance, forKey: AccountKeys.currentBalanceKey)
+        
+    }
     
     
     

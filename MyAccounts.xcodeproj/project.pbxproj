@@ -30,10 +30,8 @@
 		2862BE9E1DB905DE00824C8B /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862BE9D1DB905DE00824C8B /* BookCell.swift */; };
 		288088C31DB169E50006A8C8 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288088C21DB169E50006A8C8 /* AccountDataSource.swift */; };
 		288369401DA9D2E80019DE11 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883693F1DA9D2E80019DE11 /* Book.swift */; };
-		28B756C01DB29F99002CEAC6 /* AccountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B756BF1DB29F99002CEAC6 /* AccountStore.swift */; };
 		28B756C11DB2F309002CEAC6 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A42501DAE7FD300D9057B /* TransactionCell.swift */; };
 		28E6F5291DB7FDB8003E7B4A /* LedgerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6F5281DB7FDB8003E7B4A /* LedgerDataSource.swift */; };
-		28E6F52C1DB80085003E7B4A /* LedgerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6F52A1DB7FF74003E7B4A /* LedgerStore.swift */; };
 		28F20F851DB57F4C00A6FFF5 /* TransactionCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F20F841DB57F4C00A6FFF5 /* TransactionCreationViewController.swift */; };
 		28FC20FC1DB7F11600299B85 /* LedgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FC20FB1DB7F11600299B85 /* LedgerViewController.swift */; };
 		28FC20FE1DB7F1D000299B85 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FC20FD1DB7F1D000299B85 /* AccountCell.swift */; };
@@ -85,9 +83,7 @@
 		2862BE9D1DB905DE00824C8B /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		288088C21DB169E50006A8C8 /* AccountDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDataSource.swift; sourceTree = "<group>"; };
 		2883693F1DA9D2E80019DE11 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		28B756BF1DB29F99002CEAC6 /* AccountStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountStore.swift; sourceTree = "<group>"; };
 		28E6F5281DB7FDB8003E7B4A /* LedgerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerDataSource.swift; sourceTree = "<group>"; };
-		28E6F52A1DB7FF74003E7B4A /* LedgerStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LedgerStore.swift; path = ../MyAccountsTests/LedgerStore.swift; sourceTree = "<group>"; };
 		28F20F841DB57F4C00A6FFF5 /* TransactionCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCreationViewController.swift; sourceTree = "<group>"; };
 		28FC20FB1DB7F11600299B85 /* LedgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerViewController.swift; sourceTree = "<group>"; };
 		28FC20FD1DB7F1D000299B85 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
@@ -190,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				28FC20FD1DB7F1D000299B85 /* AccountCell.swift */,
-				28E6F52A1DB7FF74003E7B4A /* LedgerStore.swift */,
 				28E6F5281DB7FDB8003E7B4A /* LedgerDataSource.swift */,
 				28FC20FB1DB7F11600299B85 /* LedgerViewController.swift */,
 			);
@@ -209,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				280A423F1DAE72C100D9057B /* AccountViewController.swift */,
-				28B756BF1DB29F99002CEAC6 /* AccountStore.swift */,
 				288088C21DB169E50006A8C8 /* AccountDataSource.swift */,
 				280A42501DAE7FD300D9057B /* TransactionCell.swift */,
 			);
@@ -361,7 +355,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28E6F52C1DB80085003E7B4A /* LedgerStore.swift in Sources */,
 				28F20F851DB57F4C00A6FFF5 /* TransactionCreationViewController.swift in Sources */,
 				28FC20FE1DB7F1D000299B85 /* AccountCell.swift in Sources */,
 				2862BE9C1DB902FE00824C8B /* AppDataStore.swift in Sources */,
@@ -370,7 +363,6 @@
 				2862BE9A1DB8FF8B00824C8B /* BookDataSource.swift in Sources */,
 				280A42401DAE72C100D9057B /* AccountViewController.swift in Sources */,
 				28FC20FC1DB7F11600299B85 /* LedgerViewController.swift in Sources */,
-				28B756C01DB29F99002CEAC6 /* AccountStore.swift in Sources */,
 				2862BE9E1DB905DE00824C8B /* BookCell.swift in Sources */,
 				280A423E1DAE72C100D9057B /* AppDelegate.swift in Sources */,
 				28B756C11DB2F309002CEAC6 /* TransactionCell.swift in Sources */,

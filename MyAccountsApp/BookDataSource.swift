@@ -37,7 +37,12 @@ internal class BookDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
+    //MARK: NSCoding
     
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.books, forKey: "BookArray")
+        
+    }
     
     
     

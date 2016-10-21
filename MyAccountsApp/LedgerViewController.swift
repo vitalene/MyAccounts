@@ -4,9 +4,11 @@ import UIKit
 import MyAccounts
 class LedgerViewController: UITableViewController {
     
-    var dataSource = LedgerDataSource(ledger: LedgerStore().storedLedger)
-
     
+    var dataSource = LedgerDataSource(ledger: Ledger(with: []))
+
+
+//    var dataSource = BookDataSource(books: AppDataStore().storedBooks)
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = dataSource
@@ -16,6 +18,25 @@ class LedgerViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    // Does something when the segue is hit
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier! {
+        case "createAccount":
+            print("howdy there!")
+            if let row = (tableView.indexPathForSelectedRow as IndexPath?)?.row {
+                let accountRow = dataSource.ledger.accounts[row]
+                let controller = segue.destination as! AccountViewController
+                controller.dataSource.account = accountRow
+            }
+            
+            
+            
+        default:
+            fatalError("This shouldn't happen")
+        }
+        
     }
     
     

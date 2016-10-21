@@ -8,7 +8,7 @@ public class Book {
     public var aLedger: Ledger
     public var bookTitle: String
     
-    public init(withLedger: Ledger, with title: String) {
+    public init(withLedger: Ledger, title: String) {
         self.aLedger = withLedger
         self.bookTitle = title
     }

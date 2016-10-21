@@ -4,7 +4,9 @@ import UIKit
 import MyAccounts
 
 class AccountViewController: UITableViewController, TransactionCreationViewControllerDelegate  {
-    var dataSource = AccountDataSource(account: AccountStore().storedAccount)
+    var dataSource = AccountDataSource(account: Account(entries: [], title: "", initialBalance: 0.00, category: .asset(isEquity: false)))
+    
+    //AccountDataSource(account: AccountStore().storedAccount)
     func returnTheTransaction() {
     }
     // creates a transaction in the transaction creation view controller, adds it the the datasource and then dismisses it

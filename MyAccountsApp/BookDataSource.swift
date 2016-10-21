@@ -10,6 +10,9 @@ internal class BookDataSource: NSObject, UITableViewDataSource {
         self.books = books
     }
     
+    func performSegue(withIdentifier identifier: String,
+                      sender: Any?) {
+    }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,8 +31,6 @@ internal class BookDataSource: NSObject, UITableViewDataSource {
         // gets a reusable transaction cell from the tableview
         let cell: BookCell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as! BookCell
         
-        //let cellBook = books[indexPath.row]
-        
         cell.BookNameLabel.text = books[indexPath.row].bookTitle
         
         
@@ -37,6 +38,18 @@ internal class BookDataSource: NSObject, UITableViewDataSource {
     }
     
     
+    
+    
+    
+    
+    //
+    //override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //
+    //    if segue.identifier == "next" {
+    //        // On this View Controller make an Index property, like var index
+    //        let nextVC = segue.destinationViewController as! UIViewController
+    //        nextVC.index = sender as! Int
+    //}
     
     
     

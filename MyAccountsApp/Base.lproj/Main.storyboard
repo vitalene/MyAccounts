@@ -216,7 +216,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="BookNameLabel" destination="bFl-MC-HHK" id="vaE-9N-WLZ"/>
-                                    <segue destination="7bM-4U-3Fk" kind="show" id="b7N-De-Ml5"/>
+                                    <segue destination="7bM-4U-3Fk" kind="show" identifier="createLedger" id="b7N-De-Ml5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -268,7 +268,7 @@
                                 <connections>
                                     <outlet property="accountTitleLabel" destination="BGH-oz-CWo" id="nCp-OA-LRl"/>
                                     <outlet property="amountTextLabel" destination="3jZ-zp-ZFh" id="Dwi-7a-wKh"/>
-                                    <segue destination="o64-7k-dCZ" kind="show" id="N2Q-ff-vJW"/>
+                                    <segue destination="o64-7k-dCZ" kind="show" identifier="createAccount" id="N2Q-ff-vJW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

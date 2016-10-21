@@ -13,14 +13,11 @@ class AccountStore {
             ], title: "My Checking Account", initialBalance: 100.0, category: .asset(isEquity: false))
 
         
+        
     }
     
     
     
-    
-    public func updateCurrentTotal(newCurrentTotal: NSDecimalNumber) {
-        storedAccount.currentBalance = newCurrentTotal
-    }
-    
+
 }
 

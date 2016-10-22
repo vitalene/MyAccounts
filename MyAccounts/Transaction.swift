@@ -13,7 +13,7 @@ public enum CurrencyType {
 
 public class Transaction: NSObject, NSCoding {
     
-   public var date: Date
+    public var date: Date
     public var userProvidedDescription: String
     public var amount: NSDecimalNumber
     public var transactionType: TransactionType
@@ -81,6 +81,6 @@ public class Transaction: NSObject, NSCoding {
 //
 //public func ==(lhs: Transaction, rhs: Transaction) -> Bool {
 //    let areEqual = lhs.date == rhs.date && lhs.userProvidedDescription == rhs.userProvidedDescription && lhs.amount == rhs.amount && lhs.CurrencyType == rhs.CurrencyType && lhs.transactionType == rhs.transactionType
-//    
+//
 //    return areEqual
 //}

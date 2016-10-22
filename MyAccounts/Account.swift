@@ -27,11 +27,11 @@ public class Account: NSObject, NSCoding {
     
     /// initialize the account
     public init(entries: [Transaction], title: String, initialBalance: NSDecimalNumber, category: AccountCategory) {
+        self.category = category
         self.entries = entries
         self.title = title
-        self.category = category
-        self.initialBalance = initialBalance
         self.runningTotal = initialBalance
+        self.initialBalance = initialBalance
         self.currentBalance = initialBalance
         for entry in entries {
             switch entry.transactionType {

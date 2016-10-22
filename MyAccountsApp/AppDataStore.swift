@@ -30,8 +30,7 @@ class AppDataStore {
     
     func saveChanges() -> Bool {
         print("Saving items to: \(itemArchiveURL.path)")
-        return NSKeyedArchiver.archiveRootObject(storedBooks, toFile: itemArchiveURL.path)
-        
+        return NSKeyedArchiver.archiveRootObject(self.storedBooks, toFile: itemArchiveURL.path)
     }
     
 }

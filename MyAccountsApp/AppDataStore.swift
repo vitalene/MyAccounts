@@ -10,7 +10,7 @@ class AppDataStore {
     let itemArchiveURL: URL = {
         let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = documentsDirectories.first!
-        return documentDirectory.appendingPathComponent("books.store")
+        return documentDirectory.appendingPathComponent("books.archive")
         
     }()
     
@@ -28,6 +28,10 @@ class AppDataStore {
         
     }
     
-    
+    func saveChanges() -> Bool {
+        print("Saving items to: \(itemArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(storedBooks, toFile: itemArchiveURL.path)
+        
+    }
     
 }

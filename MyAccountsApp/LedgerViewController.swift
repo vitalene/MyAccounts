@@ -2,35 +2,60 @@
 
 import UIKit
 import MyAccounts
-class LedgerViewController: UITableViewController {
-    
+class LedgerViewController: UITableViewController, AccountCreationViewControllerDelegate {
     
     var dataSource = LedgerDataSource(ledger: Ledger(with: []))
-
-
-//    var dataSource = BookDataSource(books: AppDataStore().storedBooks)
+    
+    
+    
+    func accountCreationViewController(_ vc: AccountCreationViewController, didCreateAccount account: Account) {
+        dataSource.ledger.accounts.append(account)
+        
+        _ = navigationController?.popViewController(animated: true)
+        
+        print("\n\n\n\n\n\n\n\(dataSource.ledger.accounts.count)")
+        
+        
+    }
+    
+    
+    
+    
+    //    var dataSource = BookDataSource(books: AppDataStore().storedBooks)
     override func viewDidLoad() {
-        super.viewDidLoad()
         tableView.dataSource = dataSource
         
+        super.viewDidLoad()
+        tableView.reloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
+    
     // Does something when the segue is hit
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         switch segue.identifier! {
         case "createAccount":
-            print("howdy there!")
+            print("❤️❤️❤️")
             if let row = (tableView.indexPathForSelectedRow as IndexPath?)?.row {
                 let accountRow = dataSource.ledger.accounts[row]
                 let controller = segue.destination as! AccountViewController
                 controller.dataSource.account = accountRow
             }
+        case "createNewAccount":
+            print("💜💜💜")
             
+            let controller = segue.destination as! AccountCreationViewController
+            controller.delegate = self
             
             
         default:

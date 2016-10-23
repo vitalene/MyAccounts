@@ -24,6 +24,7 @@
 		28450AD81DB53E8000CD6F9F /* CanMakeTuples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28450AD71DB53E8000CD6F9F /* CanMakeTuples.swift */; };
 		28450ADA1DB53F3400CD6F9F /* TestTheCurrentBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28450AD91DB53F3400CD6F9F /* TestTheCurrentBalance.swift */; };
 		28450ADC1DB556F100CD6F9F /* TestAddingATransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28450ADB1DB556F100CD6F9F /* TestAddingATransaction.swift */; };
+		285080F81DBBD3CB00EB5C7A /* AccountCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285080F71DBBD3CB00EB5C7A /* AccountCreationViewController.swift */; };
 		2862BE981DB8FEAA00824C8B /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862BE971DB8FEAA00824C8B /* BookViewController.swift */; };
 		2862BE9A1DB8FF8B00824C8B /* BookDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862BE991DB8FF8B00824C8B /* BookDataSource.swift */; };
 		2862BE9C1DB902FE00824C8B /* AppDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862BE9B1DB902FE00824C8B /* AppDataStore.swift */; };
@@ -77,6 +78,7 @@
 		28450AD71DB53E8000CD6F9F /* CanMakeTuples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanMakeTuples.swift; sourceTree = "<group>"; };
 		28450AD91DB53F3400CD6F9F /* TestTheCurrentBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTheCurrentBalance.swift; sourceTree = "<group>"; };
 		28450ADB1DB556F100CD6F9F /* TestAddingATransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAddingATransaction.swift; sourceTree = "<group>"; };
+		285080F71DBBD3CB00EB5C7A /* AccountCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreationViewController.swift; sourceTree = "<group>"; };
 		2862BE971DB8FEAA00824C8B /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		2862BE991DB8FF8B00824C8B /* BookDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDataSource.swift; sourceTree = "<group>"; };
 		2862BE9B1DB902FE00824C8B /* AppDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataStore.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				280A423F1DAE72C100D9057B /* AccountViewController.swift */,
 				288088C21DB169E50006A8C8 /* AccountDataSource.swift */,
 				280A42501DAE7FD300D9057B /* TransactionCell.swift */,
+				285080F71DBBD3CB00EB5C7A /* AccountCreationViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				2862BE9C1DB902FE00824C8B /* AppDataStore.swift in Sources */,
 				2862BE981DB8FEAA00824C8B /* BookViewController.swift in Sources */,
 				28E6F5291DB7FDB8003E7B4A /* LedgerDataSource.swift in Sources */,
+				285080F81DBBD3CB00EB5C7A /* AccountCreationViewController.swift in Sources */,
 				2862BE9A1DB8FF8B00824C8B /* BookDataSource.swift in Sources */,
 				280A42401DAE72C100D9057B /* AccountViewController.swift in Sources */,
 				28FC20FC1DB7F11600299B85 /* LedgerViewController.swift in Sources */,

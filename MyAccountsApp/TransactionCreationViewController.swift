@@ -19,7 +19,6 @@ class TransactionCreationViewController: UIViewController {
         
     }
     
-    
     @IBOutlet var amountTextBox: UITextField!
     
     @IBOutlet var descriptionTextBox: UITextField!

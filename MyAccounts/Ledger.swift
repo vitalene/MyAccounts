@@ -6,7 +6,7 @@ import Foundation
 
 public class Ledger: NSObject, NSCoding {
     
-    public let accounts: [Account]
+    public var accounts: [Account]
     
     public init(with accounts: [Account]) {
         self.accounts = accounts
@@ -20,6 +20,7 @@ public class Ledger: NSObject, NSCoding {
         self.accounts = aDecoder.decodeObject(forKey: AccountsKeys.accountsKey) as! [Account]
         
     }
+    
     
     public func encode(with aCoder: NSCoder) {
         aCoder.encode(self.accounts, forKey: AccountsKeys.accountsKey)

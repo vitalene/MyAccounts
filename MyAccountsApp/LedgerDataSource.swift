@@ -19,7 +19,7 @@ public class LedgerDataSource: NSObject, UITableViewDataSource {
     
      public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return ledger.accounts.count
     }
     
     
@@ -32,8 +32,6 @@ public class LedgerDataSource: NSObject, UITableViewDataSource {
         
         cell.accountTitleLabel.text = cellAccount.title
         cell.amountTextLabel.text = "$\(cellAccount.currentBalance.description)"
-        
-        
         
         return cell
     }

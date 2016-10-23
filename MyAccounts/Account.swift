@@ -10,11 +10,42 @@ public class Account: NSObject, NSCoding {
     // Assets: Assets = Liabilities + Owners' Equity
     //
     // consider an enum here...
-    public enum AccountCategory {
-        case asset(isEquity: Bool)
+    
+    public enum AccountCategory: RawRepresentable {
+        public typealias RawValue = (Int, Bool)
+        
+        case asset(isEquity: Bool) 
         case liability
         case expense
         case revenue
+        
+        public var rawValue: (Int, Bool) {
+            switch self {
+            case let .asset(isEquity):
+                return (0, isEquity)
+            case .liability:
+                return (1, false)
+            case .expense:
+                return (2, false)
+            case .revenue:
+                return (3, false)
+            }
+        }
+        public init?(rawValue: RawValue) {
+            switch rawValue {
+            case let (0, isEquity):
+                self = .asset(isEquity: isEquity)
+            case (1, _):
+                self = .liability
+            case (2, _):
+                self = .expense
+            case (3, _):
+                self = .revenue
+            default:
+                return nil
+            }
+        }
+        
     }
     
     //  let register = Ledger.init(with: [Transaction], with: [String], and: Float)

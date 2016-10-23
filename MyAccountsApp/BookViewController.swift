@@ -16,9 +16,16 @@ class BookViewController: UITableViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = dataSource
+        tableView.reloadData()
         
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+
     
     // Does something when the segue is hit
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

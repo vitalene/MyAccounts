@@ -29,6 +29,7 @@
 		2862BE9A1DB8FF8B00824C8B /* BookDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862BE991DB8FF8B00824C8B /* BookDataSource.swift */; };
 		2862BE9C1DB902FE00824C8B /* AppDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862BE9B1DB902FE00824C8B /* AppDataStore.swift */; };
 		2862BE9E1DB905DE00824C8B /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2862BE9D1DB905DE00824C8B /* BookCell.swift */; };
+		2869B9BB1DBD43AC006AB099 /* BookCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869B9BA1DBD43AC006AB099 /* BookCreationViewController.swift */; };
 		288088C31DB169E50006A8C8 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288088C21DB169E50006A8C8 /* AccountDataSource.swift */; };
 		288369401DA9D2E80019DE11 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883693F1DA9D2E80019DE11 /* Book.swift */; };
 		28B756C11DB2F309002CEAC6 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A42501DAE7FD300D9057B /* TransactionCell.swift */; };
@@ -83,6 +84,7 @@
 		2862BE991DB8FF8B00824C8B /* BookDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDataSource.swift; sourceTree = "<group>"; };
 		2862BE9B1DB902FE00824C8B /* AppDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataStore.swift; sourceTree = "<group>"; };
 		2862BE9D1DB905DE00824C8B /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		2869B9BA1DBD43AC006AB099 /* BookCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCreationViewController.swift; sourceTree = "<group>"; };
 		288088C21DB169E50006A8C8 /* AccountDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDataSource.swift; sourceTree = "<group>"; };
 		2883693F1DA9D2E80019DE11 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		28E6F5281DB7FDB8003E7B4A /* LedgerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerDataSource.swift; sourceTree = "<group>"; };
@@ -123,13 +125,13 @@
 			children = (
 				28E6F52D1DB808DA003E7B4A /* Ledger */,
 				280A423D1DAE72C100D9057B /* AppDelegate.swift */,
-				28E6F52E1DB8090B003E7B4A /* Transaction Creation */,
 				28FC20F81DB7F05700299B85 /* Account */,
 				280A42411DAE72C100D9057B /* Main.storyboard */,
 				280A42441DAE72C100D9057B /* Assets.xcassets */,
 				280A42461DAE72C100D9057B /* LaunchScreen.storyboard */,
 				280A42491DAE72C100D9057B /* Info.plist */,
 				2862BE971DB8FEAA00824C8B /* BookViewController.swift */,
+				2869B9BA1DBD43AC006AB099 /* BookCreationViewController.swift */,
 				2862BE991DB8FF8B00824C8B /* BookDataSource.swift */,
 				2862BE9B1DB902FE00824C8B /* AppDataStore.swift */,
 				2862BE9D1DB905DE00824C8B /* BookCell.swift */,
@@ -194,18 +196,11 @@
 			name = Ledger;
 			sourceTree = "<group>";
 		};
-		28E6F52E1DB8090B003E7B4A /* Transaction Creation */ = {
-			isa = PBXGroup;
-			children = (
-				28F20F841DB57F4C00A6FFF5 /* TransactionCreationViewController.swift */,
-			);
-			name = "Transaction Creation";
-			sourceTree = "<group>";
-		};
 		28FC20F81DB7F05700299B85 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				280A423F1DAE72C100D9057B /* AccountViewController.swift */,
+				28F20F841DB57F4C00A6FFF5 /* TransactionCreationViewController.swift */,
 				288088C21DB169E50006A8C8 /* AccountDataSource.swift */,
 				280A42501DAE7FD300D9057B /* TransactionCell.swift */,
 				285080F71DBBD3CB00EB5C7A /* AccountCreationViewController.swift */,
@@ -366,6 +361,7 @@
 				285080F81DBBD3CB00EB5C7A /* AccountCreationViewController.swift in Sources */,
 				2862BE9A1DB8FF8B00824C8B /* BookDataSource.swift in Sources */,
 				280A42401DAE72C100D9057B /* AccountViewController.swift in Sources */,
+				2869B9BB1DBD43AC006AB099 /* BookCreationViewController.swift in Sources */,
 				28FC20FC1DB7F11600299B85 /* LedgerViewController.swift in Sources */,
 				2862BE9E1DB905DE00824C8B /* BookCell.swift in Sources */,
 				280A423E1DAE72C100D9057B /* AppDelegate.swift in Sources */,

@@ -4,6 +4,7 @@ import UIKit
 import MyAccounts
 
 class AccountViewController: UITableViewController, TransactionCreationViewControllerDelegate  {
+    
     var dataSource = AccountDataSource(account: Account(entries: [], title: "", initialBalance: 0.00, category: .asset(isEquity: false)))
     
     //AccountDataSource(account: AccountStore().storedAccount)

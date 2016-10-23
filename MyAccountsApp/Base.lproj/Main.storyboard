@@ -225,7 +225,16 @@
                             <outlet property="delegate" destination="K1a-WQ-UVR" id="21h-jW-dOi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Books" id="NQp-p7-ejL"/>
+                    <navigationItem key="navigationItem" title="Books" id="NQp-p7-ejL">
+                        <rightBarButtonItems>
+                            <barButtonItem title="+" id="iq7-AJ-ioa">
+                                <connections>
+                                    <segue destination="kEr-S9-vCe" kind="show" identifier="createNewBook" id="k3U-Ex-RgO"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="-" id="dR0-mA-gqX"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m39-EI-w9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -291,6 +300,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8e-4M-g5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="273" y="-18"/>
+        </scene>
+        <!--Book Creation View Controller-->
+        <scene sceneID="oqX-G4-a3D">
+            <objects>
+                <viewController id="kEr-S9-vCe" customClass="BookCreationViewController" customModule="MyAccountsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EHX-lk-TW8"/>
+                        <viewControllerLayoutGuide type="bottom" id="9J6-U9-QbN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nb8-cX-KZM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PS5-VU-ba2">
+                                <frame key="frameInset" minX="150" minY="377" width="75" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="kEr-S9-vCe" eventType="touchUpInside" id="jqV-2K-BF8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XNW-v5-w2l">
+                                <frame key="frameInset" minX="139" minY="218" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92V-Xz-6in">
+                                <frame key="frameInset" minX="150" minY="155" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="bookTitleTextBox" destination="XNW-v5-w2l" id="FH5-yi-euN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fff-Dz-cCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-530.39999999999998" y="743.47826086956525"/>
         </scene>
         <!--Account Creation View Controller-->
         <scene sceneID="2Ki-LY-CqH">

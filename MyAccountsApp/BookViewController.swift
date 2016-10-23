@@ -1,13 +1,23 @@
 //  Copyright © 2016 Neil Vitale. All rights reserved.
 
-import Foundation
-
-
 import UIKit
 import MyAccounts
-class BookViewController: UITableViewController  {
+
+class BookViewController: UITableViewController, BookCreationViewControllerDelegate  {
     
     var dataSource = BookDataSource(books: AppDataStore().storedBooks)
+    
+    
+    func bookCreationViewController(_ vc: BookCreationViewController, didCreateBook book: Book) {
+        dataSource.books.append(book)
+        _ = navigationController?.popViewController(animated: true)
+        
+        print("\n\n\n\n\(dataSource.books.count)")
+    }
+
+    
+    
+    
     
     /*  var currentlySelectedPath: [String:Int] = ["Book":Int, "Ledger":Int, "Account":Int, "Transaction":Int]
      Create a dictionary that will hold the current path for the currently viewed view controller
@@ -15,9 +25,9 @@ class BookViewController: UITableViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = dataSource
         tableView.reloadData()
-        
+        tableView.dataSource = dataSource
+
     }
     
     
@@ -37,8 +47,13 @@ class BookViewController: UITableViewController  {
                 let bookRow = dataSource.books[row]
                 let controller = segue.destination as! LedgerViewController
                 controller.dataSource.ledger = bookRow.aLedger
-                
             }
+        case "createNewBook":
+            print("hello world")
+            let controller = segue.destination as! BookCreationViewController
+            controller.delegate = self
+
+            
         default:
             fatalError("This shouldn't happen")
         }

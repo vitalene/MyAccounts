@@ -12,7 +12,8 @@ class LedgerViewController: UITableViewController, AccountCreationViewController
         dataSource.ledger.accounts.append(account)
         
         _ = navigationController?.popViewController(animated: true)
-        
+        tableView.reloadData()
+
         print("\n\n\n\n\n\n\n\(dataSource.ledger.accounts.count)")
         
         
@@ -62,6 +63,12 @@ class LedgerViewController: UITableViewController, AccountCreationViewController
             fatalError("This shouldn't happen")
         }
         
+    }
+    @IBAction func removeAnAccount(_ sender: AnyObject) {
+        if dataSource.ledger.accounts.count > 0 {
+            dataSource.ledger.accounts.remove(at: (dataSource.ledger.accounts.count - 1))
+            tableView.reloadData()
+        }
     }
     
     

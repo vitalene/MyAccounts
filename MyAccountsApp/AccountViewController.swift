@@ -19,7 +19,7 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
         
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
@@ -39,10 +39,11 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
     @IBAction func makeNewTransaction(_ sender: UIBarButtonItem) {}
     @IBAction func removeATransaction(_ sender: UIBarButtonItem) {
         // removes the transaction fitting the description withtransaction
-        dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 1])
-        print(dataSource.account.currentBalance.description)
-        tableView.reloadData()
-        
+        if self.dataSource.account.entries.count > 0 {
+            dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 1])
+            print(dataSource.account.currentBalance.description)
+            tableView.reloadData()
+        }
     }
     // Does something when the segue is hit
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,6 +58,6 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
         }
         
     }
-
+    
     
 }

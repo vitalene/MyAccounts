@@ -15,6 +15,13 @@ class BookViewController: UITableViewController, BookCreationViewControllerDeleg
         print("\n\n\n\n\(dataSource.books.count)")
     }
 
+    @IBAction func removeABook(_ sender: AnyObject) {
+        if dataSource.books.count > 0 {
+            dataSource.books.remove(at: dataSource.books.count - 1)
+            tableView.reloadData()
+        }
+
+    }
     
     
     
@@ -42,14 +49,14 @@ class BookViewController: UITableViewController, BookCreationViewControllerDeleg
         
         switch segue.identifier! {
         case "createLedger":
-            print("howdy there!")
+            print("🍋🍋🍋")
             if let row = (tableView.indexPathForSelectedRow as IndexPath?)?.row {
                 let bookRow = dataSource.books[row]
                 let controller = segue.destination as! LedgerViewController
                 controller.dataSource.ledger = bookRow.aLedger
             }
         case "createNewBook":
-            print("hello world")
+            print("🍒🍒🍒")
             let controller = segue.destination as! BookCreationViewController
             controller.delegate = self
 

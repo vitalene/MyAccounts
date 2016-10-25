@@ -4,10 +4,13 @@ import Foundation
 import MyAccounts
 
 internal class BookDataSource: NSObject, UITableViewDataSource {
-    var books: [Book]
+    var bookStore: AppDataStore
+    var books: [Book] {
+        return bookStore.storedBooks
+    }
     
-    init(books: [Book]) {
-        self.books = books
+    init(bookStore: AppDataStore) {
+        self.bookStore = bookStore
     }
     
     func performSegue(withIdentifier identifier: String,

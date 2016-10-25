@@ -3,11 +3,12 @@
 import Foundation
 
 
-public enum TransactionType {
+public enum TransactionType: Int {
     case debit
     case credit
+    
 }
-public enum CurrencyType {
+public enum CurrencyType: Int {
     case dollar
 }
 
@@ -49,8 +50,8 @@ public class Transaction: NSObject, NSCoding {
         aCoder.encode(self.date, forKey: TransactionKeys.dateKey)
         aCoder.encode(self.userProvidedDescription, forKey: TransactionKeys.userProvidedDescriptionKey)
         aCoder.encode(self.amount, forKey: TransactionKeys.amountKey)
-        aCoder.encode(self.transactionType, forKey: TransactionKeys.transactionTypeKey)
-        aCoder.encode(self.CurrencyType, forKey: TransactionKeys.currencyTypeKey)
+        aCoder.encode(self.transactionType.rawValue, forKey: TransactionKeys.transactionTypeKey)
+        aCoder.encode(self.CurrencyType.rawValue, forKey: TransactionKeys.currencyTypeKey)
     }
     
     

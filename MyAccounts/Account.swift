@@ -46,6 +46,22 @@ public class Account: NSObject, NSCoding {
             }
         }
         
+        var encodableValue: [String:Any] {
+            let raw = rawValue
+            return [
+                "case" : raw.0,
+                "isEquity" : raw.1
+            ]
+        }
+        
+        public init?(dictionary: [String:Any]) {
+            guard let caseValue = dictionary["case"] as? Int,
+                let isEquityValue = dictionary["isEquity"] as? Bool else {
+                    return nil
+            }
+            self.init(rawValue: (caseValue, isEquityValue))
+        }
+        
     }
     
     //  let register = Ledger.init(with: [Transaction], with: [String], and: Float)
@@ -85,7 +101,9 @@ public class Account: NSObject, NSCoding {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        self.category = aDecoder.decodeObject(forKey: AccountKeys.categoryKey) as! AccountCategory
+        let categoryDictionary = aDecoder.decodeObject(forKey: AccountKeys.categoryKey) as! [String: Any]
+        self.category = AccountCategory(dictionary: categoryDictionary)!
+        
         self.entries = aDecoder.decodeObject(forKey: AccountKeys.entriesKey) as! [Transaction]
         self.title = aDecoder.decodeObject(forKey: AccountKeys.titleKey) as! String
         self.initialBalance = aDecoder.decodeObject(forKey: AccountKeys.initialBalanceKey) as! NSDecimalNumber
@@ -93,9 +111,9 @@ public class Account: NSObject, NSCoding {
         self.currentBalance = aDecoder.decodeObject(forKey: AccountKeys.currentBalanceKey) as! NSDecimalNumber
         
     }
-    
+    // encodes the account
     public func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.category, forKey: AccountKeys.categoryKey)
+        aCoder.encode(self.category.encodableValue, forKey: AccountKeys.categoryKey)
         aCoder.encode(self.entries, forKey: AccountKeys.entriesKey)
         aCoder.encode(self.title, forKey: AccountKeys.titleKey)
         aCoder.encode(self.initialBalance, forKey: AccountKeys.initialBalanceKey)

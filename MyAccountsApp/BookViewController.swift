@@ -5,11 +5,11 @@ import MyAccounts
 
 class BookViewController: UITableViewController, BookCreationViewControllerDelegate  {
     
-    var dataSource = BookDataSource(books: AppDataStore().storedBooks)
+    var dataSource: BookDataSource! = nil
     
     
     func bookCreationViewController(_ vc: BookCreationViewController, didCreateBook book: Book) {
-        dataSource.books.append(book)
+        dataSource.bookStore.add(book: book)
         _ = navigationController?.popViewController(animated: true)
         
         print("\n\n\n\n\(dataSource.books.count)")
@@ -17,7 +17,7 @@ class BookViewController: UITableViewController, BookCreationViewControllerDeleg
 
     @IBAction func removeABook(_ sender: AnyObject) {
         if dataSource.books.count > 0 {
-            dataSource.books.remove(at: dataSource.books.count - 1)
+            dataSource.bookStore.remove(bookAt: dataSource.books.count - 1)
             tableView.reloadData()
         }
 

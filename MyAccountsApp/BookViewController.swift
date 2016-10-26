@@ -36,7 +36,9 @@ class BookViewController: UITableViewController, BookCreationViewControllerDeleg
         tableView.dataSource = dataSource
         
         // Changes the color of the navigation bar
-        navigationController?.navigationBar.backgroundColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha:1.0)
+        navigationController?.navigationBar.tintColor = UIColor.white
+//        navigationController?.navigationBar.barTintColor = UIColor(red:0.64, green:0.26, blue:0.00, alpha:1.0)
 
     }
     

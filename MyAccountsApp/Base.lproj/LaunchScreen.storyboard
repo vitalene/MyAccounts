@@ -9,9 +9,6 @@
         <array key="NotoEmoji-Regular.ttf">
             <string>NotoEmoji</string>
         </array>
-        <array key="unifont.ttf">
-            <string>unifont</string>
-        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -32,8 +29,9 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="3" height="3"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Accounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yde-pQ-ZAF">
-                                <fontDescription key="fontDescription" name="unifont" family="unifont" pointSize="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="My Accounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yde-pQ-ZAF">
+                                <frame key="frameInset" minX="44" minY="77" width="287" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

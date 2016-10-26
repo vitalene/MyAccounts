@@ -25,7 +25,8 @@ class LedgerViewController: UITableViewController, AccountCreationViewController
     //    var dataSource = BookDataSource(books: AppDataStore().storedBooks)
     override func viewDidLoad() {
         tableView.dataSource = dataSource
-        
+        tableView.delegate = self
+        dataSource.viewController = self
         super.viewDidLoad()
         tableView.reloadData()
         
@@ -74,6 +75,29 @@ class LedgerViewController: UITableViewController, AccountCreationViewController
     }
     
     
+    @IBAction func toggleEditingMode(_ sender: UIBarButtonItem) {
+        // If you are currently in editing mode...
+        if isEditing {
+            // Change text of button to inform user of state
+            sender.title = "edit"
+            
+            // Turn off editing mode
+            setEditing(false, animated: true)
+        }
+        else {
+            // Change text of button to inform user of state
+                sender.title = "done"
+            // Enter editing mode
+            setEditing(true, animated: true)
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true 
+    }
+    
+
+
     
     // MARK: - Table view data source
     

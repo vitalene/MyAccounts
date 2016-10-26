@@ -40,14 +40,24 @@ internal class AccountDataSource: NSObject, UITableViewDataSource {
         cell.runningTotalLabel.text = "$\(cellRunningTotal)"
         
         if (indexPath.row % 2) == 0 {
-            cell.backgroundColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha:0.75)
+            cell.backgroundColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha: 1)
             cell.descriptionLabel.textColor = UIColor.white
             cell.dateLabel.textColor = UIColor.white
             cell.amountLabel.textColor = UIColor.white
             cell.runningTotalLabel.textColor = UIColor.white
 
         } else {
-            cell.backgroundColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha:0.33)
+            cell.backgroundColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1.0)
+//            cell.descriptionLabel.textColor = UIColor.black
+//            cell.dateLabel.textColor = UIColor.black
+//            cell.amountLabel.textColor = UIColor.black
+//            cell.runningTotalLabel.textColor = UIColor.black
+            cell.descriptionLabel.textColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha: 1)
+            cell.dateLabel.textColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha: 1)
+            cell.amountLabel.textColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha: 1)
+            cell.runningTotalLabel.textColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha: 1)
+
+
         }
         
         return cell

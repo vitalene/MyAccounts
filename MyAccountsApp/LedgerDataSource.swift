@@ -5,7 +5,7 @@ import MyAccounts
 
 public class LedgerDataSource: NSObject, UITableViewDataSource {
     public var ledger: Ledger
-    
+    internal weak var viewController: UIViewController?
     init(ledger: Ledger) {
         self.ledger = ledger
     }
@@ -36,7 +36,38 @@ public class LedgerDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
-    
+    public func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCellEditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        // If the table view is asking to commit a delete command...
+        if editingStyle == .delete {
+            let account = ledger.accounts[(indexPath as NSIndexPath).row]
+            
+            
+            let title = "Delete \(account.title)?"
+            let message = "Are you sure you want to delete this account?"
+            
+            let ac = UIAlertController(title: title,
+                                       message: message,
+                                       preferredStyle: .actionSheet)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            ac.addAction(cancelAction)
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive,
+                                             handler: { (action) -> Void in
+                                                // Remove the item from the store
+                                                self.ledger.accounts.remove(at: indexPath.row)
+                                                
+                                                // Also remove that row from the table view with an animation
+                                                tableView.deleteRows(at: [indexPath], with: .automatic)
+            })
+            ac.addAction(deleteAction)
+            
+            // Present the alert controller
+            self.viewController!.present(ac, animated: true, completion: nil)
+        }
+    }
     
     
     

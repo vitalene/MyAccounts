@@ -31,7 +31,11 @@ class TransactionCreationViewController: UIViewController {
     
     
     @IBAction func saveButton(_ sender: AnyObject) {
- 
+        let numberFromText = NSDecimalNumber(string: amountTextBox.text)
+        if numberFromText == NSDecimalNumber.notANumber {
+            // <# foo #>
+        }
+        
         self.transactionToSend.amount = NSDecimalNumber(string: amountTextBox.text)
         self.transactionToSend.addADescription(with: descriptionTextBox.text!)
         self.transactionToSend.addADate(with: dateAndTimePicker.date)

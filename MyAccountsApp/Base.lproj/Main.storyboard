@@ -7,6 +7,11 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FontAwesome.otf">
+            <string>FontAwesome</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Transactions-->
         <scene sceneID="9b4-VH-cv3">
@@ -251,16 +256,25 @@
                                     <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFl-MC-HHK">
-                                            <color key="tintColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <color key="textColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="srR-Bm-IR1">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfc-II-jN0">
+                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFl-MC-HHK">
+                                                    <color key="tintColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bFl-MC-HHK" firstAttribute="leading" secondItem="eBC-tL-p2z" secondAttribute="leadingMargin" constant="50" id="5Wv-Px-b0A"/>
-                                        <constraint firstItem="bFl-MC-HHK" firstAttribute="centerY" secondItem="eBC-tL-p2z" secondAttribute="centerY" id="bcR-3v-YUr"/>
+                                        <constraint firstItem="srR-Bm-IR1" firstAttribute="top" secondItem="eBC-tL-p2z" secondAttribute="topMargin" constant="3" id="Dec-Ku-pgq"/>
+                                        <constraint firstItem="srR-Bm-IR1" firstAttribute="leading" secondItem="eBC-tL-p2z" secondAttribute="leadingMargin" constant="25" id="UJO-UH-OV9"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -282,10 +296,10 @@
                                     <segue destination="kEr-S9-vCe" kind="show" identifier="createNewBook" id="k3U-Ex-RgO"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="edit" id="dR0-mA-gqX">
+                            <barButtonItem title="Edit" id="dR0-mA-gqX">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="removeABook:" destination="K1a-WQ-UVR" id="Jol-TQ-wSq"/>
+                                    <action selector="toggleEditingMode:" destination="K1a-WQ-UVR" id="o3l-Df-tqs"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

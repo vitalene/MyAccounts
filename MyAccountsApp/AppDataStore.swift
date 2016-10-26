@@ -5,7 +5,7 @@ import MyAccounts
 
 class AppDataStore {
     
-    public fileprivate(set) var storedBooks: [Book]
+    public var storedBooks: [Book]
     
     let itemArchiveURL: URL = {
         let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

@@ -34,11 +34,24 @@ class BookViewController: UITableViewController, BookCreationViewControllerDeleg
         super.viewDidLoad()
         tableView.reloadData()
         tableView.dataSource = dataSource
+        tableView.delegate = self
+        self.dataSource.viewController = self
         
         // Changes the color of the navigation bar
         navigationController?.navigationBar.barTintColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha:1.0)
         navigationController?.navigationBar.tintColor = UIColor.white
+        
 //        navigationController?.navigationBar.barTintColor = UIColor(red:0.64, green:0.26, blue:0.00, alpha:1.0)
+        
+//        for family: String in UIFont.familyNames
+//        {
+//            print("\(family)")
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
+//        
 
     }
     
@@ -75,7 +88,27 @@ class BookViewController: UITableViewController, BookCreationViewControllerDeleg
     }
     
       
+    @IBAction func toggleEditingMode(_ sender: UIBarButtonItem) {
+        // If you are currently in editing mode...
+        if isEditing {
+            // Change text of button to inform user of state
+            sender.title = "Edit"
+            
+            // Turn off editing mode
+            setEditing(false, animated: true)
+        }
+        else {
+            // Change text of button to inform user of state
+            sender.title = "Done"
+            // Enter editing mode
+            setEditing(true, animated: true)
+        }
+    }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
 
     
 

@@ -32,9 +32,9 @@
 		2869B9BB1DBD43AC006AB099 /* BookCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869B9BA1DBD43AC006AB099 /* BookCreationViewController.swift */; };
 		288088C31DB169E50006A8C8 /* AccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288088C21DB169E50006A8C8 /* AccountDataSource.swift */; };
 		288369401DA9D2E80019DE11 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883693F1DA9D2E80019DE11 /* Book.swift */; };
+		288F7FAC1DC1597E00B24F58 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 288F7FAB1DC1597E00B24F58 /* FontAwesome.otf */; };
 		28B756C11DB2F309002CEAC6 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A42501DAE7FD300D9057B /* TransactionCell.swift */; };
 		28C7D5441DC00510007B505F /* NotoEmoji-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28C7D53E1DC004F5007B505F /* NotoEmoji-Regular.ttf */; };
-		28C7D5461DC00518007B505F /* unifont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28C7D5401DC004F5007B505F /* unifont.ttf */; };
 		28E6F5291DB7FDB8003E7B4A /* LedgerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6F5281DB7FDB8003E7B4A /* LedgerDataSource.swift */; };
 		28F20F851DB57F4C00A6FFF5 /* TransactionCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F20F841DB57F4C00A6FFF5 /* TransactionCreationViewController.swift */; };
 		28FC20FC1DB7F11600299B85 /* LedgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FC20FB1DB7F11600299B85 /* LedgerViewController.swift */; };
@@ -89,8 +89,8 @@
 		2869B9BA1DBD43AC006AB099 /* BookCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCreationViewController.swift; sourceTree = "<group>"; };
 		288088C21DB169E50006A8C8 /* AccountDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDataSource.swift; sourceTree = "<group>"; };
 		2883693F1DA9D2E80019DE11 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		288F7FAB1DC1597E00B24F58 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		28C7D53E1DC004F5007B505F /* NotoEmoji-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoEmoji-Regular.ttf"; sourceTree = "<group>"; };
-		28C7D5401DC004F5007B505F /* unifont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = unifont.ttf; sourceTree = "<group>"; };
 		28E6F5281DB7FDB8003E7B4A /* LedgerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerDataSource.swift; sourceTree = "<group>"; };
 		28F20F841DB57F4C00A6FFF5 /* TransactionCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCreationViewController.swift; sourceTree = "<group>"; };
 		28FC20FB1DB7F11600299B85 /* LedgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 		280A423C1DAE72C100D9057B /* MyAccountsApp */ = {
 			isa = PBXGroup;
 			children = (
+				28C7D53D1DC004F5007B505F /* Resources */,
 				28E6F52D1DB808DA003E7B4A /* Ledger */,
 				280A423D1DAE72C100D9057B /* AppDelegate.swift */,
 				28FC20F81DB7F05700299B85 /* Account */,
@@ -166,7 +167,6 @@
 		2829CDDF1DA448B3002E6C6D /* MyAccounts */ = {
 			isa = PBXGroup;
 			children = (
-				28C7D53D1DC004F5007B505F /* Resources */,
 				2829CDE01DA448B3002E6C6D /* MyAccounts.h */,
 				2883693F1DA9D2E80019DE11 /* Book.swift */,
 				2829CDF91DA44A92002E6C6D /* Ledger.swift */,
@@ -194,10 +194,11 @@
 		28C7D53D1DC004F5007B505F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				288F7FAB1DC1597E00B24F58 /* FontAwesome.otf */,
 				28C7D53E1DC004F5007B505F /* NotoEmoji-Regular.ttf */,
-				28C7D5401DC004F5007B505F /* unifont.ttf */,
 			);
-			path = Resources;
+			name = Resources;
+			path = ../MyAccounts/Resources;
 			sourceTree = "<group>";
 		};
 		28E6F52D1DB808DA003E7B4A /* Ledger */ = {
@@ -340,8 +341,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28C7D5461DC00518007B505F /* unifont.ttf in Resources */,
 				28C7D5441DC00510007B505F /* NotoEmoji-Regular.ttf in Resources */,
+				288F7FAC1DC1597E00B24F58 /* FontAwesome.otf in Resources */,
 				280A42481DAE72C100D9057B /* LaunchScreen.storyboard in Resources */,
 				280A42451DAE72C100D9057B /* Assets.xcassets in Resources */,
 				280A42431DAE72C100D9057B /* Main.storyboard in Resources */,

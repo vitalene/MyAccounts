@@ -251,7 +251,7 @@
                                     <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFl-MC-HHK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFl-MC-HHK">
                                             <color key="tintColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <color key="textColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -259,8 +259,8 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="bFl-MC-HHK" firstAttribute="leading" secondItem="eBC-tL-p2z" secondAttribute="leadingMargin" constant="50" id="5Wv-Px-b0A"/>
                                         <constraint firstItem="bFl-MC-HHK" firstAttribute="centerY" secondItem="eBC-tL-p2z" secondAttribute="centerY" id="bcR-3v-YUr"/>
-                                        <constraint firstItem="bFl-MC-HHK" firstAttribute="centerX" secondItem="eBC-tL-p2z" secondAttribute="centerX" id="rmx-fY-omJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -311,7 +311,7 @@
                                     <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGH-oz-CWo">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGH-oz-CWo">
                                             <color key="tintColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <color key="textColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -325,10 +325,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="BGH-oz-CWo" firstAttribute="centerX" secondItem="uVc-tQ-EV2" secondAttribute="centerX" constant="-6.5" id="944-I3-S5z"/>
                                         <constraint firstItem="BGH-oz-CWo" firstAttribute="centerY" secondItem="uVc-tQ-EV2" secondAttribute="centerY" id="Ihz-XQ-Xye"/>
                                         <constraint firstItem="3jZ-zp-ZFh" firstAttribute="centerY" secondItem="uVc-tQ-EV2" secondAttribute="centerY" id="Wuj-NE-cGn"/>
-                                        <constraint firstItem="3jZ-zp-ZFh" firstAttribute="leading" secondItem="BGH-oz-CWo" secondAttribute="trailing" constant="15" id="xZb-54-ihv"/>
+                                        <constraint firstItem="BGH-oz-CWo" firstAttribute="leading" secondItem="uVc-tQ-EV2" secondAttribute="leadingMargin" constant="30" id="Xst-t8-6au"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3jZ-zp-ZFh" secondAttribute="trailing" constant="15" id="Yme-RK-Vjk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

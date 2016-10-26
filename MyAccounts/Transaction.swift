@@ -4,12 +4,33 @@ import Foundation
 
 
 public enum TransactionType: Int {
-    case debit
-    case credit
+    public typealias RawValue = Int
+
+    case debit = 1
+    case credit = 2
+    
+    public var RawValue: Int {
+        switch self {
+        case .debit:
+            return 1
+        case .credit:
+            return 2
+        }
+    }
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+        case 1:
+            self = .debit
+        case 2:
+            self = .credit
+        default:
+            return nil
+        }
+    }
     
 }
 public enum CurrencyType: Int {
-    case dollar
+    case dollar = 1
 }
 
 public class Transaction: NSObject, NSCoding {

@@ -38,12 +38,19 @@ internal class AccountDataSource: NSObject, UITableViewDataSource {
         cell.amountLabel.text = "$\(transaction.transaction.amount.rounding(accordingToBehavior: TransactionCell.numberHandler).description)"
         let cellRunningTotal = transaction.runningTotal.description
         cell.runningTotalLabel.text = "$\(cellRunningTotal)"
+        
+//        if (indexPath.row % 2) == 0 {
+//            cell.backgroundColor = UIColor(red:0.23, green:0.72, blue:0.58, alpha:1.0)
+//
+//        } else {
+//            cell.backgroundColor =
+//                UIColor(red:0.94, green:0.94, blue:0.96, alpha:1.0)
+//        }
+//        
         return cell
     }
     
-    
-    
-    
+  
     
 }
 

@@ -14,7 +14,7 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
     func transactionCreationViewController(_ vc: TransactionCreationViewController, didCreateTransaction transaction: Transaction) {
         dataSource.account.addATransaction(withTransaction: transaction)
         _ = navigationController?.popViewController(animated: true)
-        
+        accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
         print(dataSource.account.currentBalance.description)
         
     }

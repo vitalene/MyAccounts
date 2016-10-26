@@ -18,6 +18,7 @@ class AccountCreationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
     }
     
     @IBOutlet var initialBalanceTextBox: UITextField!
@@ -27,6 +28,7 @@ class AccountCreationViewController: UIViewController {
     @IBAction func saveButton(_ sender: AnyObject) {
         self.accountToSend.title = accountTitleTextBox.text!
         self.accountToSend.initialBalance = NSDecimalNumber(string: initialBalanceTextBox.text)
+        self.accountToSend.currentBalance = self.accountToSend.initialBalance
         
         delegate?.accountCreationViewController(self, didCreateAccount: accountToSend)
 

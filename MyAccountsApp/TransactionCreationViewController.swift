@@ -43,6 +43,14 @@ class TransactionCreationViewController: UIViewController {
         
         delegate?.transactionCreationViewController(self, didCreateTransaction: transactionToSend)
 
+        _ = AppDataStore.saveChanges
+//        if (success) {
+//            print("\n\n\n\n Saved all of the items")
+//        } else {
+//            print("\n\n\n\n\n Could not save any of the items")
+//        }
+
+        
         
     }
     

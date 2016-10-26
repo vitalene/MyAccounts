@@ -78,6 +78,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Transactions" id="Xi7-B4-pGU">
+                        <barButtonItem key="backBarButtonItem" title="Accounts" id="xFP-cc-nj4"/>
                         <rightBarButtonItems>
                             <barButtonItem title="+" id="T4G-w8-AG0">
                                 <color key="tintColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -184,8 +185,9 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fq5-Rb-1XY">
+                                            <datePicker opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fq5-Rb-1XY">
                                                 <color key="backgroundColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="498432775.08977401">
                                                     <!--2016-10-17 21:32:55 +0000-->
                                                 </date>
@@ -193,6 +195,10 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfi-0O-Ans">
+                                        <color key="backgroundColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="275" id="IsQ-nm-e2S"/>
+                                        </constraints>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
@@ -201,9 +207,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="rfi-0O-Ans" firstAttribute="width" secondItem="spL-Wc-J9d" secondAttribute="width" id="xdr-q6-SkS"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -336,6 +339,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Accounts" id="i2C-yF-WDf">
+                        <barButtonItem key="backBarButtonItem" title="Books" id="Qjg-Eo-ScP"/>
                         <rightBarButtonItems>
                             <barButtonItem title="+" id="Lyj-Ua-d7h">
                                 <color key="tintColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -385,6 +389,10 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PS5-VU-ba2">
+                                        <color key="backgroundColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="275" id="OL3-tE-AYX"/>
+                                        </constraints>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
@@ -394,7 +402,6 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="PS5-VU-ba2" firstAttribute="width" secondItem="4z2-42-d0c" secondAttribute="width" id="ncq-Pl-hth"/>
                                     <constraint firstItem="hlb-qP-zub" firstAttribute="width" secondItem="4z2-42-d0c" secondAttribute="width" constant="-40" id="w6M-vE-NxJ"/>
                                 </constraints>
                             </stackView>
@@ -428,7 +435,7 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Usv-hQ-yER">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a name for your account and an initial balance" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1J-8T-D2q">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Please enter a name for your account and an initial balance" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1J-8T-D2q">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -440,7 +447,10 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcD-rO-826">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcD-rO-826">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="hka-35-aLn"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -471,12 +481,17 @@
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IeW-47-zTY">
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-Vm-ALf">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" ambiguous="YES" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-Vm-ALf">
+                                                                <frame key="frameInset" width="11" height="55"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-Uv-bBA">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-Uv-bBA">
+                                                                <frame key="frameInset" minX="11" width="190" height="55"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="55" id="mTO-Ao-0r8"/>
+                                                                </constraints>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -488,13 +503,16 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="862-0J-6to"/>
+                                    <constraint firstAttribute="height" constant="200" id="Lk1-se-CHj"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Usv-hQ-yER" secondAttribute="trailing" constant="20" id="JEb-eg-Foz"/>
-                            <constraint firstItem="Usv-hQ-yER" firstAttribute="leading" secondItem="s1u-hW-wLm" secondAttribute="leadingMargin" constant="20" id="Yld-lM-kbr"/>
-                            <constraint firstItem="Usv-hQ-yER" firstAttribute="top" secondItem="Lpo-FK-Qdg" secondAttribute="bottom" constant="150" id="mWp-LT-F0D"/>
+                            <constraint firstItem="Usv-hQ-yER" firstAttribute="centerY" secondItem="s1u-hW-wLm" secondAttribute="centerY" id="NvT-O0-fkT"/>
+                            <constraint firstItem="Usv-hQ-yER" firstAttribute="centerX" secondItem="s1u-hW-wLm" secondAttribute="centerX" id="g4i-mJ-VSk"/>
                         </constraints>
                     </view>
                     <connections>
@@ -516,6 +534,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="unifont" family="unifont" pointSize="14"/>
                             <color key="textColor" red="0.14679534729999999" green="0.57082360980000002" blue="0.52502274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>

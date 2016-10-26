@@ -44,6 +44,8 @@ class BookViewController: UITableViewController, BookCreationViewControllerDeleg
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.reloadData()
+        
+        
     }
 
     

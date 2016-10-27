@@ -6,7 +6,7 @@ import MyAccounts
 
 internal class AccountDataSource: NSObject, UITableViewDataSource {
     var account: Account
-    internal weak var viewController: UIViewController?
+    internal weak var viewController: AccountViewController?
     init(account: Account) {
         self.account = account
     }
@@ -83,11 +83,15 @@ internal class AccountDataSource: NSObject, UITableViewDataSource {
             
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive,
                                              handler: { (action) -> Void in
-                                                // Remove the item from the store
-                                                self.account.entries.remove(at: indexPath.row)
-                                                
-                                                // Also remove that row from the table view with an animation
-                                                tableView.deleteRows(at: [indexPath], with: .automatic)
+                                                OperationQueue.main.addOperation {
+                                                    
+                                                    // Remove the item from the store
+                                                        self.account.remove(transactionAt: indexPath.row)
+                                                    
+                                                    // Also remove that row from the table view with an animation
+                                                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                                                    self.viewController?.updateTotal(shouldCallReloadData: false)
+                                                }
             })
             ac.addAction(deleteAction)
             

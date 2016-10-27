@@ -14,7 +14,7 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
     func transactionCreationViewController(_ vc: TransactionCreationViewController, didCreateTransaction transaction: Transaction) {
         dataSource.account.addATransaction(withTransaction: transaction)
         _ = navigationController?.popViewController(animated: true)
-        accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
+        updateTotal()
         print(dataSource.account.currentBalance.description)
         
     }
@@ -26,7 +26,15 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
         tableView.dataSource = dataSource
         tableView.delegate = self
         self.dataSource.viewController = self
-
+        updateTotal()
+    }
+    
+    func updateTotal(shouldCallReloadData: Bool = true) {
+        print("😡😡FASDFASDFASDFASDFASDFASDFASDFASDFASDFASDFASD")
+        if shouldCallReloadData {
+            tableView.reloadData()
+        }
+        print("$\(dataSource.account.currentBalance.description)")
         accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
     }
     
@@ -34,20 +42,19 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
         super.viewDidAppear(animated)
         print(dataSource.account.currentBalance.description)
         
-        tableView.reloadData()
-        accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
+        updateTotal()
     }
     
     @IBOutlet var accountTotalLabel: UIBarButtonItem!
     @IBAction func makeNewTransaction(_ sender: UIBarButtonItem) {}
-//    @IBAction func removeATransaction(_ sender: UIBarButtonItem) {
-//        // removes the transaction fitting the description withtransaction
-//        if self.dataSource.account.entries.count > 0 {
-//            dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 1])
-//            print(dataSource.account.currentBalance.description)
-//            tableView.reloadData()
-//        }
-//    }
+    //    @IBAction func removeATransaction(_ sender: UIBarButtonItem) {
+    //        // removes the transaction fitting the description withtransaction
+    //        if self.dataSource.account.entries.count > 0 {
+    //            dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 1])
+    //            print(dataSource.account.currentBalance.description)
+    //            tableView.reloadData()
+    //        }
+    //    }
     
     @IBAction func toggleEditingMode(_ sender: UIBarButtonItem) {
         // If you are currently in editing mode...

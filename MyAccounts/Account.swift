@@ -66,7 +66,7 @@ public class Account: NSObject, NSCoding {
     
     //  let register = Ledger.init(with: [Transaction], with: [String], and: Float)
     public var category: AccountCategory
-    public var entries = [Transaction]()
+    public fileprivate(set) var entries = [Transaction]()
     public var title: String
     public var runningTotal: NSDecimalNumber
     public var initialBalance: NSDecimalNumber
@@ -136,14 +136,17 @@ public class Account: NSObject, NSCoding {
     }
     /// removes a transaction from the transaction array fitting the description
     public func removeATransaction(withTransaction: Transaction) {
-        self.entries.remove(at: self.entries.index(of: withTransaction)!)
-        switch withTransaction.transactionType {
+        remove(transactionAt: self.entries.index(of: withTransaction)!)
+    }
+    
+    public func remove(transactionAt index: Int) {
+        let removedTransaction = self.entries.remove(at: index)
+        switch removedTransaction.transactionType {
         case .credit:
-            self.currentBalance = self.currentBalance.adding(withTransaction.amount)
+            self.currentBalance = self.currentBalance.adding(removedTransaction.amount)
         case .debit:
-            self.currentBalance = self.currentBalance.subtracting(withTransaction.amount)
+            self.currentBalance = self.currentBalance.subtracting(removedTransaction.amount)
         }
-        
     }
     
     

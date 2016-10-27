@@ -24,6 +24,9 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
         super.viewDidLoad()
         tableView.reloadData()
         tableView.dataSource = dataSource
+        tableView.delegate = self
+        self.dataSource.viewController = self
+
         accountTotalLabel.title = "$\(dataSource.account.currentBalance.description)"
     }
     
@@ -37,14 +40,36 @@ class AccountViewController: UITableViewController, TransactionCreationViewContr
     
     @IBOutlet var accountTotalLabel: UIBarButtonItem!
     @IBAction func makeNewTransaction(_ sender: UIBarButtonItem) {}
-    @IBAction func removeATransaction(_ sender: UIBarButtonItem) {
-        // removes the transaction fitting the description withtransaction
-        if self.dataSource.account.entries.count > 0 {
-            dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 1])
-            print(dataSource.account.currentBalance.description)
-            tableView.reloadData()
+//    @IBAction func removeATransaction(_ sender: UIBarButtonItem) {
+//        // removes the transaction fitting the description withtransaction
+//        if self.dataSource.account.entries.count > 0 {
+//            dataSource.account.removeATransaction(withTransaction: self.dataSource.account.entries[self.dataSource.account.entries.count - 1])
+//            print(dataSource.account.currentBalance.description)
+//            tableView.reloadData()
+//        }
+//    }
+    
+    @IBAction func toggleEditingMode(_ sender: UIBarButtonItem) {
+        // If you are currently in editing mode...
+        if isEditing {
+            // Change text of button to inform user of state
+            sender.title = "Edit"
+            
+            // Turn off editing mode
+            setEditing(false, animated: true)
+        }
+        else {
+            // Change text of button to inform user of state
+            sender.title = "Done"
+            // Enter editing mode
+            setEditing(true, animated: true)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     // Does something when the segue is hit
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
